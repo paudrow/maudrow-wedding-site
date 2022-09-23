@@ -1,9 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { trpc } from "../utils/trpc";
-import { ICalendar, CalendarOptions, GoogleCalendar, YahooCalendar, OutlookCalendar } from "datebook";
+import Image from "next/image";
+import { CalendarOptions } from "datebook";
+
+import couple from "/public/imgs/couple.png";
 
 import * as config from "../../config";
+import Calendar from "../components/Calendar";
 
 const ceremony = config.weddingDetails.ceremony;
 
@@ -14,7 +17,6 @@ const calendarOptions: CalendarOptions = {
   start: ceremony.start,
   end: ceremony.end,
 }
-
 
 const Home: NextPage = () => {
   // const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
@@ -29,29 +31,19 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
+        <div className="w-64">
+          <Image
+            src={couple}
+            height={couple.height}
+            width={couple.width}
+            layout="intrinsic"
+            alt="Michelley and Audrow"
+          />
+        </div>
         <p>
           Welcome!
         </p>
-        <div className="grid grid-flow-col">
-          <button onClick={() => new ICalendar(calendarOptions).download()}>
-            Apple
-          </button>
-          <button>
-            <a target="_blank" href={new GoogleCalendar(calendarOptions).render()} rel="noopener noreferrer">
-              Google
-            </a>
-          </button>
-          <button>
-            <a target="_blank" href={new YahooCalendar(calendarOptions).render()} rel="noopener noreferrer">
-              Yahoo
-            </a>
-          </button>
-          <button>
-            <a target="_blank" href={new OutlookCalendar(calendarOptions).render()} rel="noopener noreferrer">
-              Outlook
-            </a>
-          </button>
-        </div>
+        <Calendar calendarOptions={calendarOptions} />
       </main>
     </>
   );
