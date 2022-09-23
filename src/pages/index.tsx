@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { CalendarOptions } from "datebook";
-import { Carousel } from "flowbite-react";
+import { Carousel, Navbar } from "flowbite-react";
 import type { StaticImageData } from "next/image";
 
 import alamo from "/public/imgs/alamo.png";
@@ -39,6 +39,32 @@ const Home: NextPage = () => {
         <meta name="description" content="Details about Michelley and Audrow's wedding" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Navbar
+        fluid={true}
+        rounded={true}
+      >
+        <Navbar.Toggle />
+        <Navbar.Collapse>
+          <Navbar.Link
+            href="/navbars"
+            active={true}
+          >
+            Home
+          </Navbar.Link>
+          <Navbar.Link href="/navbars">
+            Locations
+          </Navbar.Link>
+          <Navbar.Link href="/navbars">
+            Schedule
+          </Navbar.Link>
+          <Navbar.Link href="/navbars">
+            Attire
+          </Navbar.Link>
+          <Navbar.Link href="/rsvp">
+            RSVP
+          </Navbar.Link>
+        </Navbar.Collapse>
+      </Navbar>
 
       <main>
         <div className={carouselClassNames}>
@@ -53,7 +79,7 @@ const Home: NextPage = () => {
           </Carousel>
         </div>
 
-        {/* <div className="flex justify-center">
+        <div className="flex justify-center">
           <div className="w-64">
             <Image
               src={couple}
@@ -63,7 +89,7 @@ const Home: NextPage = () => {
               alt="Michelley and Audrow"
             />
           </div>
-        </div> */}
+        </div>
         <p>
           Welcome!
         </p>
