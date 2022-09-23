@@ -16,6 +16,8 @@
     "datebook": "^7.0.8",
     "dayjs": "^1.11.5",
     "endent": "^2.1.0",
+    "flowbite": "^1.5.3",
+    "flowbite-react": "^0.1.11",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
