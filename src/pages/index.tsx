@@ -26,8 +26,6 @@ const calendarOptions: CalendarOptions = {
 }
 
 const Home: NextPage = () => {
-  // const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
-  // const countdown = trpc.useQuery(["example.countdown", { date: new Date().toLocaleString() }]);
 
   const carouselImages: StaticImageData[] = [alamo, benj, brokenSpoke, couple, dressy, engagement];
   const carouselClassNames = "h-56 sm:h-64 xl:h-80 2xl:h-96 bg-blue-200"
