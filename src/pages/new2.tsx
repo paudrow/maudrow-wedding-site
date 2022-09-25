@@ -1,13 +1,18 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { HomeIcon } from '@heroicons/react/24/solid'
 import confetti from 'canvas-confetti'
 import mainImage from '../../public/imgs/broken-spoke.png'
 import Image from 'next/image'
 import * as config from "../../config";
 import CountdownTimer from "../components/Countdown";
+import { Fragment } from 'react'
 
-const selectedClasses = "inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
-const notSelectedClasses = "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+const desktopSelectedClasses = "inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+const desktopNotSelectedClasses = "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+const mobileSelectedClasses = "block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700"
+const mobileNotSelectedClasses = "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
 
 const getDimensions = (ele: HTMLElement) => {
   const { height } = ele.getBoundingClientRect();
@@ -102,14 +107,13 @@ function App() {
   }, [sectionRefs, visibleSection]);
 
 
-  return (
-    <div>
-      {/* Navbar */}
-      <nav className="sticky bg-white top-0 flex justify-center py-4 z-20">
-        <div className="flex gap-3" ref={navRef}>
+  function Navbar() {
+    return (
+      <nav className="sticky bg-white top-0 flex px-6 justify-between md:justify-center py-4 z-20">
+        <div className="flex gap-3 flex-col md:flex-row" ref={navRef}>
           <button
             type="button"
-            className={`${visibleSection === "Home" ? selectedClasses : notSelectedClasses}`}
+            className={`${visibleSection === "Home" ? desktopSelectedClasses : desktopNotSelectedClasses}`}
             onClick={() => {
               if (homeRef.current) {
                 scrollTo(homeRef.current);
@@ -120,7 +124,7 @@ function App() {
           </button>
           <button
             type="button"
-            className={`${visibleSection === "Location" ? selectedClasses : notSelectedClasses}`}
+            className={`${visibleSection === "Location" ? desktopSelectedClasses : desktopNotSelectedClasses}`}
             onClick={() => {
               if (locationRef.current) {
                 scrollTo(locationRef.current);
@@ -131,7 +135,7 @@ function App() {
           </button>
           <button
             type="button"
-            className={`${visibleSection === "Schedule" ? selectedClasses : notSelectedClasses}`}
+            className={`${visibleSection === "Schedule" ? desktopSelectedClasses : desktopNotSelectedClasses}`}
             onClick={() => {
               if (scheduleRef.current) {
                 scrollTo(scheduleRef.current);
@@ -142,7 +146,7 @@ function App() {
           </button>
           <button
             type="button"
-            className={`${visibleSection === "Details" ? selectedClasses : notSelectedClasses}`}
+            className={`${visibleSection === "Details" ? desktopSelectedClasses : desktopNotSelectedClasses}`}
             onClick={() => {
               if (detailsRef.current) {
                 scrollTo(detailsRef.current);
@@ -162,10 +166,135 @@ function App() {
           </button>
         </div>
       </nav>
+    )
+  }
+
+  function Navbar2() {
+    return (
+        // <div className="flex gap-3 flex-col md:flex-row" ref={navRef}></div>
+      <Disclosure as="nav" className="bg-white shadow sticky top-0 z-20">
+      {({ open }) => (
+          <>
+            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+              <div className="relative flex h-16 justify-center">
+                <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                  {/* Mobile menu button */}
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <span className="sr-only">Open main menu</span>
+                    {open ? (
+                      <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                    ) : (
+                      <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                    )}
+                  </Disclosure.Button>
+                </div>
+                {/* Top bar on bigger displays */}
+                <div className="flex flex-1 items-center justify-center sm:items-stretch" ref={navRef}>
+                  <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <button
+                      type="button"
+                      className={`${visibleSection === "Home" ? desktopSelectedClasses : desktopNotSelectedClasses}`}
+                      onClick={() => {
+                        if (homeRef.current) {
+                          scrollTo(homeRef.current);
+                        }
+                      }}
+                    >
+                      <HomeIcon className="h-5 w-5 mr-1 text-red-600" aria-hidden="true" /> Home
+                    </button>
+                    <button
+                      type="button"
+                      className={`${visibleSection === "Location" ? desktopSelectedClasses : desktopNotSelectedClasses}`}
+                      onClick={() => {
+                        if (locationRef.current) {
+                          scrollTo(locationRef.current);
+                        }
+                      }}
+                    >
+                      Location
+                    </button>
+                    <button
+                      type="button"
+                      className={`${visibleSection === "Schedule" ? desktopSelectedClasses : desktopNotSelectedClasses}`}
+                      onClick={() => {
+                        if (scheduleRef.current) {
+                          scrollTo(scheduleRef.current);
+                        }
+                      }}
+                    >
+                      Schedule
+                    </button>
+                    <button
+                      type="button"
+                      className={`${visibleSection === "Details" ? desktopSelectedClasses : desktopNotSelectedClasses}`}
+                      onClick={() => {
+                        if (detailsRef.current) {
+                          scrollTo(detailsRef.current);
+                        }
+                      }}
+                    >
+                      Details
+                    </button>
+                  </div>
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <button
+                      type="button"
+                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                      onClick={confettiFireworks}
+                    >
+                      RSVP
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Disclosure.Panel className="sm:hidden">
+              <div className="space-y-1 pt-2 pb-4">
+                <Disclosure.Button
+                  as="a"
+                  href="#Home"
+                  className={visibleSection === "Home" ? mobileSelectedClasses : mobileNotSelectedClasses}
+                >
+                  Home
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as="a"
+                  href="#Location"
+                  className={visibleSection === "Location" ? mobileSelectedClasses : mobileNotSelectedClasses}
+                >
+                  Location
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as="a"
+                  href="#Schedule"
+                  className={visibleSection === "Schedule" ? mobileSelectedClasses : mobileNotSelectedClasses}
+                >
+                  Schedule
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as="a"
+                  href="#Details"
+                  className={visibleSection === "Details" ? mobileSelectedClasses : mobileNotSelectedClasses}
+                >
+                  Details
+                </Disclosure.Button>
+              </div>
+            </Disclosure.Panel>
+          </>
+        )}
+      </Disclosure>
+    )
+  }
+
+  return (
+    <div>
+      {/* <Navbar /> */}
+      <Navbar2 />
       {/* Home */}
       <div className="bg-red-200 flex flex-col py-10 items-center" id="Home" ref={homeRef}>
         <h1 className="text-center text-5xl font-bold text-red-600 pt-10">We{"'"}re Getting Married!</h1>
-        <div className="w-1/2 my-10 shadow rounded">
+        <div className="w-full lg:w-1/2 my-10 shadow rounded">
           <Image priority src={mainImage} alt="Audrow and Michelley" layout="responsive" width={mainImage.width} height={mainImage.height} />
         </div>
         <button
