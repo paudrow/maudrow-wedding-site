@@ -17,7 +17,7 @@ type Props = {
 
 export default function Example({sections, selectedId}: Props) {
   return (
-    <Disclosure as="nav" className="bg-white shadow fixed w-full top-0">
+    <Disclosure as="nav" className="bg-alice-blue shadow fixed w-full top-0">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -50,7 +50,7 @@ export default function Example({sections, selectedId}: Props) {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
-                  className="relative inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="relative inline-flex items-center rounded-md border border-transparent bg-big-red px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
                   <span>RSVP</span>
                 </button>
