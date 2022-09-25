@@ -15,6 +15,8 @@
     "@trpc/next": "^9.27.2",
     "@trpc/react": "^9.27.2",
     "@trpc/server": "^9.27.2",
+    "@types/canvas-confetti": "^1.4.3",
+    "canvas-confetti": "^1.5.1",
     "datebook": "^7.0.8",
     "dayjs": "^1.11.5",
     "endent": "^2.1.0",
