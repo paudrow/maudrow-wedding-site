@@ -1,13 +1,12 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { HomeIcon } from '@heroicons/react/24/solid'
+import { Disclosure } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { HomeIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import confetti from 'canvas-confetti'
 import mainImage from '../../public/imgs/broken-spoke.png'
 import Image from 'next/image'
 import * as config from "../../config";
 import CountdownTimer from "../components/Countdown";
-import { Fragment } from 'react'
 
 const desktopSelectedClasses = "inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
 const desktopNotSelectedClasses = "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
@@ -109,69 +108,6 @@ function App() {
 
   function Navbar() {
     return (
-      <nav className="sticky bg-white top-0 flex px-6 justify-between md:justify-center py-4 z-20">
-        <div className="flex gap-3 flex-col md:flex-row" ref={navRef}>
-          <button
-            type="button"
-            className={`${visibleSection === "Home" ? desktopSelectedClasses : desktopNotSelectedClasses}`}
-            onClick={() => {
-              if (homeRef.current) {
-                scrollTo(homeRef.current);
-              }
-            }}
-          >
-            <HomeIcon className="h-5 w-5 mr-1 text-red-600" aria-hidden="true" /> Home
-          </button>
-          <button
-            type="button"
-            className={`${visibleSection === "Location" ? desktopSelectedClasses : desktopNotSelectedClasses}`}
-            onClick={() => {
-              if (locationRef.current) {
-                scrollTo(locationRef.current);
-              }
-            }}
-          >
-            Location
-          </button>
-          <button
-            type="button"
-            className={`${visibleSection === "Schedule" ? desktopSelectedClasses : desktopNotSelectedClasses}`}
-            onClick={() => {
-              if (scheduleRef.current) {
-                scrollTo(scheduleRef.current);
-              }
-            }}
-          >
-            Schedule
-          </button>
-          <button
-            type="button"
-            className={`${visibleSection === "Details" ? desktopSelectedClasses : desktopNotSelectedClasses}`}
-            onClick={() => {
-              if (detailsRef.current) {
-                scrollTo(detailsRef.current);
-              }
-            }}
-          >
-            Details
-          </button>
-        </div>
-        <div className="ml-6">
-          <button
-            type="button"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={confettiFireworks}
-          >
-            RSVP
-          </button>
-        </div>
-      </nav>
-    )
-  }
-
-  function Navbar2() {
-    return (
-        // <div className="flex gap-3 flex-col md:flex-row" ref={navRef}></div>
       <Disclosure as="nav" className="bg-white shadow sticky top-0 z-20">
       {({ open }) => (
           <>
@@ -239,9 +175,10 @@ function App() {
                   <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <button
                       type="button"
-                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                      className="inline-flex items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                       onClick={confettiFireworks}
                     >
+                      <EnvelopeIcon className="-ml-1 mr-3 h-5 w-5" aria-hidden="true" />
                       RSVP
                     </button>
                   </div>
@@ -290,18 +227,18 @@ function App() {
   return (
     <div>
       {/* <Navbar /> */}
-      <Navbar2 />
+      <Navbar />
       {/* Home */}
       <div className="bg-red-200 flex flex-col py-10 items-center" id="Home" ref={homeRef}>
-        <h1 className="text-center text-5xl font-bold text-red-600 pt-10">We{"'"}re Getting Married!</h1>
+        <h1 className="text-center text-5xl font-bold text-red-600 sm:pt-10">We{"'"}re Getting Married!</h1>
         <div className="w-full lg:w-1/2 my-10 shadow rounded">
           <Image priority src={mainImage} alt="Audrow and Michelley" layout="responsive" width={mainImage.width} height={mainImage.height} />
         </div>
         <button
-          className="text-4xl font-bold text-red-600 bg-yellow-300 rounded-xl shadow border-4 border-yellow-500 p-4"
+          className="inline-flex items-center text-4xl font-bold text-red-600 bg-yellow-300 hover:bg-yellow-400 rounded-xl shadow border-4 border-yellow-500 p-4"
           onClick={confettiFireworks}
-        >11/11/22 in San Antonio, Tx</button>
-
+        >
+          11/11/22 in San Antonio, Tx</button>
         <div className="my-6">
           <CountdownTimer targetDate={config.weddingDetails.ceremony.start} showSeconds={true} />
         </div>
