@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Disclosure } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon, MapPinIcon, BriefcaseIcon } from '@heroicons/react/24/outline'
 import { HomeIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import confetti from 'canvas-confetti'
 import mainImage from '../../public/imgs/broken-spoke.png'
+import parkImage from '../../public/imgs/dressy.png'
 import Image from 'next/image'
 import * as config from "../../config";
 import CountdownTimer from "../components/Countdown";
@@ -242,11 +243,120 @@ function App() {
         <div className="py-10">
           <CountdownTimer targetDate={config.weddingDetails.ceremony.start} showSeconds={true} />
         </div>
-
       </div>
       {/* Location */}
-      <div className="h-60 bg-ltyellowbg" id="Location" ref={locationRef}>
+      <div className="bg-ltyellowbg" id="Location" ref={locationRef}>
+        <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-3 sm:gap-6 sm:mx-6">
+          <div className="col-span-1 hidden sm:flex flex-col justify-center">
+            <div className="border-4 border-red-600 rounded-3xl overflow-hidden">
+              <Image src={parkImage} alt="Audrow and Michelley in the park" layout="responsive" width={parkImage.width} height={parkImage.height} />
+            </div>
+          </div>
+          <div className="col-span-1 text-center my-10">
+            <div className="flex justify-center">
+              <MapPinIcon className="block h-12 w-12" aria-hidden="true" />
+            </div>
+            <h2 className="text-xl">Venue</h2>
+            <div>
+              <p>
+                Phil Hardberger park is a 300+ acre nature park near us, it{'’'}s where we go for our weekly Sunday hike and where we got engaged!
+              </p>
+              <br />
+              <p>
+                The ceremony will be held in the picnic areas by the Urban Ecology Center, designed by Lake Flato.
+              </p>
+            </div>
+            <button
+              className="mt-6 px-4 py-2 bg-white border-red-600 border-4 rounded-xl text-red-600"
+            >
+              <a href="https://goo.gl/maps/xYZbHhp1sPpjzv8t6">
+                See on map
+              </a>
+            </button>
+          </div>
+          <div className="col-span-1 text-center my-10">
+            <div className="flex justify-center">
+              <BriefcaseIcon className="block h-12 w-12" aria-hidden="true" />
+            </div>
+            <h2 className="text-xl">Hotel</h2>
+            <div>
+              <p>
+                There are plenty of hotel options near the airport and downtown, feel free to choose whatever works for you.
+              </p>
+              <br />
+              <p>
+                We stayed at the Estancia del Norte when we first moved here, and had a great experience. It’s 7 mins from the airport, and about 8 mins from our house and Phil Hardberger park.
+              </p>
+            </div>
+            <button
+              className="mt-6 px-4 py-2 bg-white border-red-600 border-4 rounded-xl text-red-600"
+            >
+              <a href="https://goo.gl/maps/NAMGszvCseSQZ3Qi7">
+                See on map
+              </a>
+            </button>
+          </div>
+          {/* <div className="col-span-2 align-middle">
+            <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2">
+              <div className="col-span-1">
+                2
+              </div>
+              <div className="col-span-1">
+                3
+              </div>
+            </div>
+          </div> */}
+        </div>
+        {/* <div className="grid grid-cols-1 sm:grid-cols-3 grid-rows-5 grid-flow-row gap-6">
+          <div className="col-1 hidden sm:block sm:row-span-full">
+            <Image src={parkImage} alt="Audrow and Michelley in the park" layout="responsive" width={parkImage.width} height={parkImage.height} />
+          </div>
+          <div className="col-2 row-start-2 row-end-4 text-center">
+            <h2 className="text-xl">Venue</h2>
+            <p>
+              Phil Hardberger park is a 300+ acre nature park near us, it{'’'}s where we go for our weekly Sunday hike and where we got engaged!
+              <br />
+              The ceremony will be held in the picnic areas by the Urban Ecology Center, designed by Lake Flato.
+            </p>
+          </div>
+          <div className="col-3 row-start-2 row-end-4 text-center">
+            <h2 className="text-xl">Hotel</h2>
+            <p>
+              There are plenty of hotel options near the airport and downtown, feel free to choose whatever works for you.
+              <br />
+              We stayed at the Estancia del Norte when we first moved here, and had a great experience. It’s 7 mins from the airport, and about 8 mins from our house and Phil Hardberger park.
+            </p>
+          </div>
+        </div> */}
+        {/* <div className="grid grid-flow-row grid-cols-1 md:grid-cols-3 md:grid-rows-3 gap-4">
+          <div className="row-span-all">
+            <div className="hidden md:block shadow rounded border-4 border-red-600">
+              <Image src={parkImage} alt="Audrow and Michelley in the park" layout="responsive" width={parkImage.width} height={parkImage.height} />
+            </div>
+          </div>
+        </div> */}
       </div>
+      {/* <div className="bg-yellow-200 flex flex-col md:flex-row justify-evenly align-middle" id="Location" ref={locationRef}>
+        <div className="w-full md:w-1/4 md:my-10 shadow rounded border-4 border-red-600">
+          <Image src={parkImage} alt="Audrow and Michelley in the park" layout="responsive" width={parkImage.width} height={parkImage.height} />
+        </div>
+        <div className="md:w-1/4 flex flex-col mt-6 md:mt-0 md:justify-center">
+          <h2 className="text-xl text-center">Venue</h2>
+          <p className="text-center">
+            Phil Hardberger park is a 300+ acre nature park near us, it{'’'}s where we go for our weekly Sunday hike and where we got engaged! 
+            <br />
+            The ceremony will be held in the picnic areas by the Urban Ecology Center, designed by Lake Flato.
+          </p>
+        </div>
+        <div className="md:w-1/4 flex flex-col mt-6 md:mt-0 md:justify-center">
+          <h2 className="text-xl text-center">Hotel</h2>
+          <p className="text-center">
+          There are plenty of hotel options near the airport and downtown, feel free to choose whatever works for you. 
+          <br/>
+          We stayed at the Estancia del Norte when we first moved here, and had a great experience. It’s 7 mins from the airport, and about 8 mins from our house and Phil Hardberger park.
+          </p>
+      </div>
+        </div> */}
       <div className="h-80 bg-alice-blue" id="Schedule" ref={scheduleRef}>
       </div>
       <div className="h-80 bg-pink" id="Details" ref={detailsRef}>
