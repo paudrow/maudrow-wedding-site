@@ -1,100 +1,48 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import { CalendarOptions } from "datebook";
-import { Carousel, Navbar } from "flowbite-react";
-import type { StaticImageData } from "next/image";
+import {createRef, useEffect, useState} from 'react';
+import Navbar from '../components/Navbar';
 
-import alamo from "/public/imgs/alamo.png";
-import benj from "/public/imgs/benj.png";
-import couple from "/public/imgs/couple.png";
-import brokenSpoke from "/public/imgs/broken-spoke.png";
-import dressy from "/public/imgs/dressy.png";
-import engagement from "/public/imgs/engagement.png";
-
-import * as config from "../../config";
-import Calendar from "../components/Calendar";
-
-const ceremony = config.weddingDetails.ceremony;
-
-const calendarOptions: CalendarOptions = {
-  title: ceremony.title,
-  location: ceremony.location,
-  description: ceremony.description,
-  start: ceremony.start,
-  end: ceremony.end,
+function scrollTo(ref: React.RefObject<HTMLDivElement>, offset: number) {
+  if (!ref.current) return;
+  window.scrollTo({
+    top: ref.current.offsetTop - offset,
+    behavior: 'smooth',
+  });
 }
 
-const Home: NextPage = () => {
+function getBottom(ref: React.RefObject<HTMLDivElement>) {
+  if (!ref.current) return 0;
+  return ref.current.offsetTop + ref.current.offsetHeight;
+}
 
-  const carouselImages: StaticImageData[] = [alamo, benj, brokenSpoke, couple, dressy, engagement];
-  const carouselClassNames = "h-56 sm:h-64 xl:h-80 2xl:h-96 bg-blue-200"
-  const carouselSlideInterval = 5000
+function Main() {
+
+  const homeRef = createRef<HTMLDivElement>();
+  const locationRef = createRef<HTMLDivElement>();
+  const scheduleRef = createRef<HTMLDivElement>();
+  const detailsRef = createRef<HTMLDivElement>();
+
   return (
     <>
-      <Head>
-        <title>Michelley and Audrow{"'"}s Wedding</title>
-        <meta name="description" content="Details about Michelley and Audrow's wedding" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar
-        fluid={true}
-        rounded={true}
-      >
-        <Navbar.Toggle />
-        <Navbar.Collapse>
-          <Navbar.Link
-            href="/navbars"
-            active={true}
-          >
-            Home
-          </Navbar.Link>
-          <Navbar.Link href="/navbars">
-            Locations
-          </Navbar.Link>
-          <Navbar.Link href="/navbars">
-            Schedule
-          </Navbar.Link>
-          <Navbar.Link href="/navbars">
-            Attire
-          </Navbar.Link>
-          <Navbar.Link href="/rsvp">
-            RSVP
-          </Navbar.Link>
-        </Navbar.Collapse>
-      </Navbar>
-
-      <main>
-        <div className={carouselClassNames}>
-          <Carousel slideInterval={carouselSlideInterval}>
-            {
-              carouselImages.map((image, index) => (
-                <div className="flex justify-center" key={index}>
-                  <img src={image.src} alt={`carosel image ${index}`} className={carouselClassNames} />
-                </div>
-              ))
-            }
-          </Carousel>
-        </div>
-
-        <div className="flex justify-center">
-          <div className="w-64">
-            <Image
-              src={couple}
-              height={couple.height}
-              width={couple.width}
-              layout="intrinsic"
-              alt="Michelley and Audrow"
-            />
-          </div>
-        </div>
-        <p>
-          Welcome!
-        </p>
-        <Calendar calendarOptions={calendarOptions} />
-      </main>
+      <Navbar sections={[
+        {ref: homeRef, name: 'Home', id: 'home'},
+        {ref: locationRef, name: 'Location', id: 'location'},
+        {ref: scheduleRef, name: 'Schedule', id: 'schedule'},
+        {ref: detailsRef, name: 'Details', id: 'details'},
+      ]} />
+      <div className="bg-blue-400 h-screen" ref={homeRef}>
+        <h1 className="text-4xl text-center">Home</h1>
+      </div>
+      <div className="bg-orange-400 h-screen" ref={locationRef}>
+        <h1 className="text-4xl text-center">Location</h1>
+      </div>
+      <div className="bg-purple-400 h-screen" ref={scheduleRef}>
+        <h1 className="text-4xl text-center">Schedule</h1>
+      </div>
+      <div className="bg-green-400 h-screen" ref={detailsRef}>
+        <h1 className="text-4xl text-center">Details</h1>
+      </div>
     </>
   );
-};
+}
 
-export default Home;
+export default Main
