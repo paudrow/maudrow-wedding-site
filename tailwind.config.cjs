@@ -17,7 +17,16 @@ module.exports = {
       },
       fontFamily: {
         'bangers': ['Bangers'],
-      }
+      },
+      keyframes: {
+        swing: {
+          '0%, 100%': { transform: 'rotate(-5deg)'},
+          '50%': { transform: 'rotate(5deg)' },
+        }
+      },
+      animation: {
+        swing: 'swing 2s ease-in-out infinite',
+      },
     },
   },
   plugins: [

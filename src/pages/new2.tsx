@@ -11,7 +11,7 @@ import CountdownTimer from "../components/Countdown";
 
 const desktopSelectedClasses = "inline-flex items-center border-b-2 border-big-red px-1 pt-1 text-sm font-medium text-big-red"
 const desktopNotSelectedClasses = "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-fire-opal hover:text-gray-800"
-const mobileSelectedClasses = "block border-l-4 border-indigo-500 bg-big-red py-2 pl-3 pr-4 text-base font-medium text-big-red"
+const mobileSelectedClasses = "block border-l-4 border-big-red bg-pink py-2 pl-3 pr-4 text-base font-medium text-big-red"
 const mobileNotSelectedClasses = "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-fire-opal hover:bg-gray-50 hover:text-gray-800"
 
 const getDimensions = (ele: HTMLElement) => {
@@ -110,13 +110,13 @@ function App() {
   function Navbar() {
     return (
       <Disclosure as="nav" className="bg-alice-blue shadow sticky top-0 z-20">
-      {({ open }) => (
+        {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
               <div className="relative flex h-16 justify-center">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-fire-opal hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-big-red">
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-big-red hover:bg-pink hover:text-fire-opal focus:outline-none focus:ring-2 focus:ring-inset focus:ring-big-red">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -230,13 +230,23 @@ function App() {
       {/* <Navbar /> */}
       <Navbar />
       {/* Home */}
-      <div className="bg-pink flex flex-col py-10 items-center" id="Home" ref={homeRef}>
-        <h1 className="text-center font-bangers text-5xl font-bold text-big-red sm:pt-10">We{"'"}re Getting Married!</h1>
+      <div className="bg-pink flex flex-col items-center" id="Home" ref={homeRef}>
+        {/*lanterns*/}
+        <div className="flex items-start lg:gap-20 gap-5 md:gap-10">
+          <object data="/svg/lantern1.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top hidden sm:block"></object>
+          <object data="/svg/lantern2.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
+          <object data="/svg/lantern3.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top" ></object>
+          <object data="/svg/lantern4.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
+          <object data="/svg/lantern5.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
+          <object data="/svg/lantern6.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
+
+        </div>
+        <h1 className="text-center font-bangers text-3xl md:text-6xl font-bold text-big-red mt-5">We{"'"}re Getting Married!</h1>
         <div className="w-full lg:w-2/3 sm:w-3/4 my-10 shadow rounded">
           <Image priority src={mainImage} alt="Audrow and Michelley" layout="responsive" width={mainImage.width} height={mainImage.height} />
         </div>
         <button
-          className="inline-flex items-center text-4xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl shadow border-4 border-harvest-gold py-4 px-10"
+          className="inline-flex items-center text-3xl md:text-5xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl shadow border-4 border-harvest-gold py-4 px-4 sm:px-8 md:px-14 lg:px-18"
           onClick={confettiFireworks}
         >
           11/11/22 &nbsp;in &nbsp;San Antonio, Tx</button>
@@ -360,6 +370,9 @@ function App() {
       <div className="h-80 bg-alice-blue" id="Schedule" ref={scheduleRef}>
       </div>
       <div className="h-80 bg-pink" id="Details" ref={detailsRef}>
+        <div className="font-bangers text-big-red text-center p-4">
+          We can{"'"}t wait to see you!
+        </div>
       </div>
       <div className="h-screen text-center flex flex-col justify-center">
         Website made with love by Audrow and Michelley
