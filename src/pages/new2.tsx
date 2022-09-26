@@ -262,11 +262,11 @@ function App() {
               <Image src={parkImage} alt="Audrow and Michelley in the park" layout="responsive" width={parkImage.width} height={parkImage.height} />
             </div>
           </div>
-          <div className="col-span-1 text-center my-10">
+          <div className="col-span-1 text-center my-10 mx-4 md:mx-2 lg:mx-10">
             <div className="flex justify-center">
-              <MapPinIcon className="block h-12 w-12" aria-hidden="true" />
+              <object data="/svg/venue.svg"></object>
             </div>
-            <h2 className="text-xl">Venue</h2>
+            <h2 className="text-xl font-bold">VENUE</h2>
             <div>
               <p>
                 Phil Hardberger park is a 300+ acre nature park near us, it{'’'}s where we go for our weekly Sunday hike and where we got engaged!
@@ -277,18 +277,18 @@ function App() {
               </p>
             </div>
             <button
-              className="mt-6 px-4 py-2 bg-white border-red-600 border-4 rounded-xl text-red-600"
+              className="mt-6 px-4 py-2 bg-white border-red-600 border-2 rounded-xl text-red-600"
             >
               <a href="https://goo.gl/maps/xYZbHhp1sPpjzv8t6">
                 See on map
               </a>
             </button>
           </div>
-          <div className="col-span-1 text-center my-10">
+          <div className="col-span-1 text-center my-10 mx-4 md:mx-2 lg:mx-10">
             <div className="flex justify-center">
-              <BriefcaseIcon className="block h-12 w-12" aria-hidden="true" />
+              <object data="/svg/hotel.svg"></object>
             </div>
-            <h2 className="text-xl">Hotel</h2>
+            <h2 className="text-xl font-bold">HOTEL</h2>
             <div>
               <p>
                 There are plenty of hotel options near the airport and downtown, feel free to choose whatever works for you.
@@ -299,7 +299,7 @@ function App() {
               </p>
             </div>
             <button
-              className="mt-6 px-4 py-2 bg-white border-red-600 border-4 rounded-xl text-red-600"
+              className="mt-6 px-4 py-2 bg-white border-red-600 border-2 rounded-xl text-red-600"
             >
               <a href="https://goo.gl/maps/NAMGszvCseSQZ3Qi7">
                 See on map
@@ -367,10 +367,42 @@ function App() {
           </p>
       </div>
         </div> */}
-      <div className="h-80 bg-alice-blue" id="Schedule" ref={scheduleRef}>
+      <div className="bg-alice-blue" id="Schedule" ref={scheduleRef}>
+        <div className="grid grid-cols-2 gap-10 text-center py-8 md:px-10">
+          <div className="font-bold">
+            THURSDAY
+          </div>
+          <div className="font-bold">
+            FRIDAY
+          </div>
+          <div> {/*thursday*/}
+            6:00 pm
+            <br/>
+            Welcome dinner at our favourite Texas BBQ, The Smoke Shack
+            <div className="text-big-red">3714 Broadway</div>
+          </div>
+          <div> {/*friday*/}
+            4:00 pm
+            <br/>
+            Come to the park for photos & enjoy the views
+          </div>
+          <div>{/*blank thursday*/}</div>
+          <div> {/*friday*/}
+            4:30 pm
+            <br/>
+            The wedding ceremony! & more photos during Golden Hour
+          </div>
+          <div>{/*blank thursday*/}</div>
+          <div> {/*friday*/}
+            6:00 pm
+            <br/>
+            Hot pot dinner at Sichuan Garden
+            <div className="text-big-red">2347 NW Military Hwy</div>
+          </div>
+        </div>
       </div>
       <div className="h-80 bg-pink" id="Details" ref={detailsRef}>
-        <div className="font-bangers text-big-red text-center p-4">
+        <div className="font-bangers text-big-red text-center p-4 text-3xl md:text-5xl">
           We can{"'"}t wait to see you!
         </div>
       </div>
