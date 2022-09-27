@@ -1,4 +1,5 @@
 import {createRef, useEffect, useState} from 'react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 function scrollTo(ref: React.RefObject<HTMLDivElement>, offset: number) {
   if (!ref.current) return;
@@ -25,6 +26,7 @@ function Navbar({sections} : Props) {
 
   const navRef = createRef<HTMLDivElement>();
   const [navHeight, setNavHeight] = useState(0);
+  const [isOpen, setIsOpen] = useState(true);
   const [currentSection, setCurrentSection] = useState<string | undefined>();
 
   useEffect(() => {
@@ -52,19 +54,52 @@ function Navbar({sections} : Props) {
   return (
     <>
       <nav className="sticky top-0" ref={navRef}>
-        <div className="bg-white h-16 flex flex-row justify-center items-center gap-6">
-          {sections.map((section) => (
+        <div className="bg-white h-16 flex flex-row items-center sm:justify-center">
+          <div className="inline-flex justify-start pl-4 sm:hidden">
             <button
-              key={section.id}
-              onClick={() => {
-                scrollTo(section.ref, navHeight);
-              }}
-              className={currentSection === section.id ? 'bg-red-500' : ''}
+              className="inline-flex items-center justify-center rounded-md p-2 text-big-red hover:bg-pink hover:text-fire-opal focus:outline-none focus:ring-2 focus:ring-inset focus:ring-big-red"
+              onClick={() => setIsOpen(!isOpen)}
             >
-              {section.name}
+              <span className="sr-only">Open main menu</span>
+              {isOpen ? (
+                <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+              )}
             </button>
-          ))}
+          </div>
+          <div className='hidden sm:flex flex-row justify-center gap-6'>
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => {
+                  scrollTo(section.ref, navHeight);
+                }}
+                className={currentSection === section.id ? 'bg-red-500' : ''}
+              >
+                {section.name}
+              </button>
+            ))}
+          </div>
         </div>
+        {isOpen && (
+          <div className="sm:hidden w-full">
+            <div className="flex flex-col bg-alice-blue gap-4 pb-4">
+              {sections.map((section) => (
+                <button
+                  key={section.id}
+                  onClick={() => {
+                    scrollTo(section.ref, navHeight);
+                    setIsOpen(false);
+                  }}
+                  className={currentSection === section.id ? 'bg-red-500' : ''}
+                >
+                  {section.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
     </>
   );

@@ -1,18 +1,5 @@
-import {createRef, useEffect, useState} from 'react';
+import {createRef} from 'react';
 import Navbar from '../components/Navbar';
-
-function scrollTo(ref: React.RefObject<HTMLDivElement>, offset: number) {
-  if (!ref.current) return;
-  window.scrollTo({
-    top: ref.current.offsetTop - offset,
-    behavior: 'smooth',
-  });
-}
-
-function getBottom(ref: React.RefObject<HTMLDivElement>) {
-  if (!ref.current) return 0;
-  return ref.current.offsetTop + ref.current.offsetHeight;
-}
 
 function Main() {
 
