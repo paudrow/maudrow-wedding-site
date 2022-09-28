@@ -19,8 +19,10 @@ function Main() {
   const detailsRef = createRef<HTMLDivElement>();
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
+    window.addEventListener('load', () => {
+      window.scrollTo({
+        top: 0,
+      })
     })
   })
 
