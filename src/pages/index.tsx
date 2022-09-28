@@ -182,7 +182,7 @@ function Main() {
       <Location />
       <Schedule />
       <Details />
-      <footer className='bg-alice-blue h-20 flex items-center justify-center px-6'>
+      <footer className='bg-alice-blue h-20 flex items-center justify-center text-center px-6'>
         This website was made with love by Michelley and Audrow
       </footer>
     </>

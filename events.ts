@@ -18,7 +18,7 @@ const thursday: CalendarOptions = {
 
 const friday: CalendarOptions = {
   title: "Michelley & Audrow\'s Wedding Ceremony + Dinner",
-  location: "Phil Hardberger Park, 8400 NW Military Hwy, San Antonio, TX 78231, USA",
+  location: "Urban Ecology Center, Phil Hardberger Park, 8400 NW Military Hwy, San Antonio, TX 78231, USA",
   description: endent`
     We'll meet in the park for a quick ceremony and then go to dinner.
   `,
