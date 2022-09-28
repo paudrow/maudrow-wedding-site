@@ -170,7 +170,15 @@ function Main() {
         {ref: locationRef, name: 'Location', id: 'location'},
         {ref: scheduleRef, name: 'Schedule', id: 'schedule'},
         {ref: detailsRef, name: 'Details', id: 'details'},
-      ]} />
+      ]}
+        actionButton={(
+          <button className="bg-white border-big-red border-2 rounded-xl text-big-red px-4 py-2">
+            <a className="uppercase" href="https://forms.gle/84zQh1WGK6mvrrzV9">
+              RSVP
+            </a>
+          </button>
+        )}
+      />
       <Home />
       <Location />
       <Schedule />
