@@ -5,8 +5,8 @@ import confettiFireworks from '../utils/fireworks';
 import CountdownTimer from '../components/Countdown';
 import * as config from "../../config";
 
-import mainImage from '../../public/imgs/broken-spoke.png'
-import parkImage from '../../public/imgs/dressy.png'
+import mainImage from '../../public/imgs/main-image-engage.jpg'
+import parkImage from '../../public/imgs/park-engaged.jpg'
 
 function Main() {
 
@@ -135,8 +135,39 @@ function Main() {
   )
 
   const Details = () => (
-    <div className="bg-green-400 h-screen" ref={detailsRef}>
-      <h1 className="text-4xl text-center">Details</h1>
+    <div className="bg-pink" id="Details" ref={detailsRef}>
+      <div>
+        <div className="text-center mx-8 md:mx-24 lg:mx-48 p-12">
+          <div>
+            <object data="/svg/attire.svg" className="inline-flex justify-center -p-1"></object>
+            <div className="font-bold">ATTIRE</div>
+            <div className="font-semibold">Semi-formal, no colors</div>
+            <p>Following Chinese wedding traditions, Michelle and Audrow will be wearing red. During the ceremony please wear something in greyscale {"("}black, white, or grey{")"}. Semi-formal means suit jacket with optional tie, cocktail dress, jumpsuit, etc.
+              <br />
+              For the rest of the events, please wear whatever you{"'"}re comfortable with.</p>
+          </div>
+          <div className="pt-10">
+            <object data="/svg/weather.svg" className="inline-flex justify-center"></object>
+            <div className="font-bold p-2">WEATHER</div>
+            <p>While we don{"'"}t have personal experience with Novembers in San Antonio, yet, historic weather data shows that the temperatures in mid-November have a high of 74 degrees, low of 55 degrees, about 55% humidity, windspeed of 4mph - 14mph, and a 19% chance of percipitation.</p>
+          </div>
+          <div className="pt-10">
+            <object data="/svg/registry.svg" className="inline-flex justify-center"></object>
+            <div className="font-bold p-2">REGISTRY</div>
+            <p>We are more than grateful for those we love travel to our wedding, celebrating the happy occasion with us! We have most things we need for our house, however we are getting a puppy soon (!!!), so if you really would like to get us something for the puppy, here are some suggestions. Or find a cute Christmas ornament you’d like us to have.</p>
+            <button
+              className="mt-6 px-4 py-2 bg-white border-red-600 border-2 rounded-xl text-red-600"
+            >
+              <a className="uppercase" href="https://www.myregistry.com/giftlist/maudrow">
+                Our registry
+              </a> </button>
+          </div>
+        </div>
+      </div>
+      <div className="text-center py-4">Feel free to text, call, email, discord us with any questions or concerns.</div>
+      <div className="font-bangers text-big-red text-center pb-10 text-3xl md:text-5xl">
+        We can{"'"}t wait to see you!
+      </div>
     </div>
   )
 
