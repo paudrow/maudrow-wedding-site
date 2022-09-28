@@ -1,5 +1,6 @@
 # TODO
 
+- [x] Add RSVP button
 - [x] Make cute favicon
 - [x] Style the navbar (desktop)
 - [x] Style the navbar (mobile)
