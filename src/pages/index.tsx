@@ -1,4 +1,4 @@
-import {createRef} from 'react';
+import {createRef, useEffect} from 'react';
 import Navbar from '../components/Navbar';
 import Image from 'next/image';
 import confettiFireworks from '../utils/fireworks';
@@ -17,6 +17,12 @@ function Main() {
   const locationRef = createRef<HTMLDivElement>();
   const scheduleRef = createRef<HTMLDivElement>();
   const detailsRef = createRef<HTMLDivElement>();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    })
+  })
 
   const Home = () => (
     <div className="bg-pink flex flex-col items-center" id="Home" ref={homeRef}>
