@@ -45,8 +45,9 @@ function Main() {
   )
 
   const Location = () => (
-    <div className="bg-ltyellowbg h-full" id="Location" ref={locationRef}>
-      <div className="grid grid-flow-row grid-cols-1 md:grid-cols-3 md:gap-6 md:mx-6">
+    <div className="bg-ltyellowbg " id="Location" ref={locationRef}>
+      <div className='w-full flex flex-row justify-center'>
+      <div className="grid grid-flow-row grid-cols-1 md:grid-cols-3 md:gap-3 md:mx-6">
         <div className="hidden md:flex flex-col justify-center items-center py-16 px-6">
           <img src={parkImage.src} alt="Audrow and Michelley in the park" className='w-full max-w-sm border-4 border-fire-opal drop-shadow-md rounded-3xl overflow-hidden'/>
         </div>
@@ -69,66 +70,62 @@ function Main() {
           </p>
         </Place>
       </div>
+      </div>
     </div>
   )
 
   const Schedule = () => (
     <div className="bg-alice-blue py-10" id="Schedule" ref={scheduleRef}>
-      <div className='grid grid-flow-row grid-cols-1 md:grid-cols-2 text-center gap-y-6 md:gap-x-6 md:gap-y-10 md:px-10'>
+      <div className='w-full flex flex-row justify-center'>
+      <div className='grid grid-flow-row grid-cols-1 md:grid-cols-2 text-center gap-y-6 md:gap-x-10 md:gap-y-10 md:px-10'>
         <Event title='Thursday' calendarOptions={plans.thursday}>
           <div>
-            6:00 pm
-            <br />
+          <div className='font-semibold'>6:00 pm</div>
             Welcome dinner at our favourite Texas BBQ, The Smoke Shack
             <div className="text-big-red">3714 Broadway</div>
           </div>
         </Event>
         <Event title='Friday' calendarOptions={plans.friday}>
           <div>
-            4:00 pm
-            <br />
+          <div className='font-semibold'> 4:00 pm </div>
             Come to the park for photos & enjoy the views
           </div>
           <div>
-            4:30 pm
-            <br />
+          <div className='font-semibold pt-3'>4:30 pm</div>
             The wedding ceremony! & more photos during Golden Hour
           </div>
           <div>
-            6:00 pm
-            <br />
+          <div className='font-semibold pt-3'>6:00 pm</div>
             Hot pot dinner at Sichuan Garden
             <div className="text-big-red">2347 NW Military Hwy</div>
           </div>
         </Event>
         <Event title='Saturday' calendarOptions={plans.saturday}>
           <div>
-            10:30 am
-            <br />
+          <div className='font-semibold'>10:30 am</div>
             Brunch at the Pearl
             <div className="text-big-red">tbd</div>
           </div>
           <div>
-            12:00 pm
-            <br />
+          <div className='font-semibold pt-3'>12:00 pm</div>
             Farmers Market at the Pearl
           </div>
         </Event>
         <Event title='Sunday' calendarOptions={plans.sunday}>
           <div>
-            11:00 am
-            <br />
+          <div className='font-semibold'>11:00 am</div>
             Come over for lemony sourdough pancakes!
             <div className="text-big-red">11210 Cedar Elm</div>
           </div>
         </Event>
+      </div>
       </div>
     </div>
   )
 
   const Details = () => (
     <div className="bg-pink" id="Details" ref={detailsRef}>
-      <div className="flex justify-center py-6">
+      <div className="flex justify-center py-10 md:py-16">
         <div className="text-center w-3/4 lg:max-w-3xl">
           <div>
             <object data="/svg/attire.svg" className="inline-flex justify-center -p-1"></object>
@@ -156,9 +153,11 @@ function Main() {
           </div>
         </div>
       </div>
-      <div className="text-center py-4">Feel free to text, call, email, discord us with any questions or concerns.</div>
+      <div className='flex flex-col items-center'>
+      <div className="py-4 max-w-sm md:max-w-full text-center">Feel free to text, call, email, discord us with any questions or concerns.</div>
       <div className="font-bangers text-big-red text-center pb-10 text-3xl md:text-5xl">
         We can{"'"}t wait to see you!
+        </div>
       </div>
     </div>
   )
@@ -175,7 +174,7 @@ function Main() {
       <Location />
       <Schedule />
       <Details />
-      <footer className='bg-slate-300 h-72 flex flex-col justify-center text-center'>
+      <footer className='bg-alice-blue h-20 flex flex-col justify-center text-center'>
         This website was made with love by Michelley and Audrow
       </footer>
     </>

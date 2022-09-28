@@ -1,6 +1,6 @@
 const Place = ({ children, url, title, svgPath }: { children: JSX.Element | JSX.Element[], url: string, title: string, svgPath: string }) => (
-  <div className="text-center py-10 px-8 md:px-2 lg:px-10 flex flex-col place-content-center justify-between md:max-w-xl h-full">
-    <div className="py-4">
+  <div className="text-center p-3 m-3 md:p-20 md:px-2 flex flex-col place-content-center justify-between md:max-w-lg">
+    <div className="py-10">
       <div className="flex justify-center">
         <object data={svgPath}></object>
       </div>
