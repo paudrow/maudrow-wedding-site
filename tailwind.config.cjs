@@ -22,11 +22,25 @@ module.exports = {
         swing: {
           '0%, 100%': { transform: 'rotate(-5deg)'},
           '50%': { transform: 'rotate(5deg)' },
+        },
+        grow: {
+          '0%, 100%': { transform: 'scale(1)'},
+          '50%': { transform: 'scale(1.03)' },
         }
       },
       animation: {
         swing: 'swing 2s ease-in-out infinite',
+        grow: 'grow 2s ease-in-out infinite',
       },
+      borderWidth: {
+        DEFAULT: '1px',
+        '0': '0',
+        '2': '2px',
+        '3': '3px',
+        '4': '4px',
+        '6': '6px',
+        '8': '8px',
+      }
     },
   },
   plugins: [

@@ -30,11 +30,11 @@ function Main() {
         <object data="/svg/lantern6.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
       </div>
       <h1 className="text-center font-bangers text-3xl md:text-6xl font-bold text-big-red mt-5">We{"'"}re Getting Married!</h1>
-      <div className="w-full lg:w-2/3 sm:w-3/4 my-10 shadow rounded">
-        <Image priority src={mainImage} alt="Audrow and Michelley" layout="responsive" width={mainImage.width} height={mainImage.height} />
+      <div className="w-4/5 lg:w-2/3 my-10 drop-shadow-lg rounded-3xl border-6 border-big-red overflow-hidden">
+        <Image priority src={mainImage} alt="Audrow and Michelley" layout="responsive" width={mainImage.width} height={mainImage.height}/>
       </div>
       <button
-        className="inline-flex items-center text-3xl md:text-5xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl shadow border-4 border-harvest-gold py-4 px-4 sm:px-8 md:px-14 lg:px-18"
+        className="inline-flex animate-grow items-center text-3xl md:text-5xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl shadow border-4 border-harvest-gold py-4 px-4 sm:px-8 md:px-14 lg:px-18 drop-shadow-md"
         onClick={confettiFireworks}
       >
         11/11/22 &nbsp;in &nbsp;San Antonio, Tx</button>
@@ -45,10 +45,10 @@ function Main() {
   )
 
   const Location = () => (
-    <div className="bg-ltyellowbg" id="Location" ref={locationRef}>
+    <div className="bg-ltyellowbg h-full" id="Location" ref={locationRef}>
       <div className="grid grid-flow-row grid-cols-1 md:grid-cols-3 md:gap-6 md:mx-6">
-        <div className="hidden md:flex flex-col justify-center items-center">
-          <img src={parkImage.src} alt="Audrow and Michelley in the park" className='w-full max-w-sm border-4 border-red-600 rounded-3xl overflow-hidden' />
+        <div className="hidden md:flex flex-col justify-center items-center py-16 px-6">
+          <img src={parkImage.src} alt="Audrow and Michelley in the park" className='w-full max-w-sm border-4 border-fire-opal drop-shadow-md rounded-3xl overflow-hidden'/>
         </div>
         <Place title='Venue' svgPath="/svg/venue.svg" url="https://goo.gl/maps/xYZbHhp1sPpjzv8t6">
           <p>
@@ -56,7 +56,7 @@ function Main() {
           </p>
           <br />
           <p>
-            The ceremony will be held in the picnic areas by the Urban Ecology Center, designed by Lake Flato.
+            The ceremony will be held in the picnic area by the Urban Ecology Center, designed by Lake Flato.
           </p>
         </Place>
         <Place title='Hotel' svgPath="/svg/hotel.svg" url="https://goo.gl/maps/NAMGszvCseSQZ3Qi7">
@@ -128,8 +128,8 @@ function Main() {
 
   const Details = () => (
     <div className="bg-pink" id="Details" ref={detailsRef}>
-      <div>
-        <div className="text-center mx-8 md:mx-24 lg:mx-48 p-12">
+      <div className="flex justify-center py-6">
+        <div className="text-center w-3/4 lg:max-w-3xl">
           <div>
             <object data="/svg/attire.svg" className="inline-flex justify-center -p-1"></object>
             <div className="font-bold">ATTIRE</div>
@@ -148,7 +148,7 @@ function Main() {
             <div className="font-bold p-2">REGISTRY</div>
             <p>We are more than grateful for those we love travel to our wedding, celebrating the happy occasion with us! We have most things we need for our house, however we are getting a puppy soon (!!!), so if you really would like to get us something for the puppy, here are some suggestions. Or find a cute Christmas ornament you’d like us to have.</p>
             <button
-              className="mt-6 px-4 py-2 bg-white border-red-600 border-2 rounded-xl text-red-600"
+              className="mt-6 px-4 py-2 bg-white border-fire-opal border-2 rounded-xl text-fire-opal"
             >
               <a className="uppercase" href="https://www.myregistry.com/giftlist/maudrow">
                 Our registry

@@ -5,8 +5,8 @@
 - [ ] Style the navbar (mobile)
 - [ ] Add icons to Calendar buttons
 - [ ] Style schedule section
-- [ ] Style main photo
-- [ ] Make width look better on ultra wide displays
+- [x] Style main photo
+- [x] Make width look better on ultra wide displays
 - [ ] Style footer
 
 Bonus:
