@@ -19,8 +19,13 @@ function Main() {
   const detailsRef = createRef<HTMLDivElement>();
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  })
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }, 300);
+  }, []);
 
   const Home = () => (
     <div className="bg-pink flex flex-col items-center" id="Home" ref={homeRef}>
