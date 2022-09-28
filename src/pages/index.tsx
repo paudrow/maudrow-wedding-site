@@ -19,11 +19,7 @@ function Main() {
   const detailsRef = createRef<HTMLDivElement>();
 
   useEffect(() => {
-    window.addEventListener('load', () => {
-      window.scrollTo({
-        top: 0,
-      })
-    })
+    window.scrollTo(0, 0)
   })
 
   const Home = () => (
