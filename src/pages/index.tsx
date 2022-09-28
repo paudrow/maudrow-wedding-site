@@ -34,7 +34,7 @@ function Main() {
         <Image priority src={mainImage} alt="Audrow and Michelley" layout="responsive" width={mainImage.width} height={mainImage.height}/>
       </div>
       <button
-        className="inline-flex animate-grow items-center text-3xl md:text-5xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl drop-shadow border-3 md:border-4 border-harvest-gold py-4 px-3 sm:px-6 md:px-14 lg:px-18"
+        className="inline-flex animate-grow items-center text-2xl md:text-5xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl drop-shadow border-3 md:border-4 border-harvest-gold py-4 px-6 sm:px-6 md:px-14 lg:px-18"
         onClick={confettiFireworks}
       >
         11/11/22 &nbsp;in &nbsp;San Antonio, Tx</button>
@@ -154,7 +154,7 @@ function Main() {
         </div>
       </div>
       <div className='flex flex-col items-center'>
-      <div className="py-4 max-w-sm md:max-w-full text-center">Feel free to text, call, email, discord us with any questions or concerns.</div>
+      <div className="py-4 px-6 max-w-sm md:max-w-full text-center">Feel free to text, call, email, discord us with any questions or concerns.</div>
       <div className="font-bangers text-big-red text-center pb-10 text-3xl md:text-5xl">
         We can{"'"}t wait to see you!
         </div>
@@ -174,7 +174,7 @@ function Main() {
       <Location />
       <Schedule />
       <Details />
-      <footer className='bg-alice-blue h-20 flex flex-col justify-center text-center'>
+      <footer className='bg-alice-blue h-20 flex items-center justify-center px-6'>
         This website was made with love by Michelley and Audrow
       </footer>
     </>

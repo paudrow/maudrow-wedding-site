@@ -5,7 +5,7 @@ export default function Calendar({ calendarOptions }: { calendarOptions: Calenda
     <>
     <div className="py-3">
       <p>Add to calendar</p>
-      <div className="flex flex-row justify-evenly gap-3 py-3">
+      <div className="flex flex-row justify-evenly gap-3 pt-3">
         <button onClick={() => new ICalendar(calendarOptions).download()}>
           <object data="/svg/apple.svg"/>
         </button>

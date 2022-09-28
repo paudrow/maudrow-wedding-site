@@ -5,7 +5,7 @@ const Place = ({ children, url, title, svgPath }: { children: JSX.Element | JSX.
         <object data={svgPath}></object>
       </div>
       <h2 className="text-xl font-bold uppercase py-3">{title}</h2>
-      <div className="py-5">
+      <div className="md:py-5">
         {children}
       </div>
       </div>

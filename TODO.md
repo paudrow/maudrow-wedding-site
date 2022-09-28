@@ -1,6 +1,6 @@
 # TODO
 
-- [ ] Make cute favicon
+- [x] Make cute favicon
 - [x] Style the navbar (desktop)
 - [x] Style the navbar (mobile)
 - [x] Add icons to Calendar buttons
