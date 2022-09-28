@@ -171,8 +171,8 @@ function Main() {
         {ref: detailsRef, name: 'Details', id: 'details'},
       ]}
         actionButton={(
-          <button className="bg-white border-big-red border-2 rounded-xl text-big-red px-4 py-2">
-            <a className="uppercase" href="https://forms.gle/84zQh1WGK6mvrrzV9">
+          <button className="bg-big-red rounded-xl text-white px-4 py-2 hover:bg-fire-opal">
+            <a className="uppercase" href="https://forms.gle/84zQh1WGK6mvrrzV9" target="_blank" rel="noreferrer">
               RSVP
             </a>
           </button>
