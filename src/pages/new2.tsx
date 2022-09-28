@@ -280,7 +280,7 @@ function App() {
               className="mt-6 px-4 py-2 bg-white border-red-600 border-2 rounded-xl text-red-600"
             >
               <a href="https://goo.gl/maps/xYZbHhp1sPpjzv8t6">
-                See on map
+                SEE ON MAP
               </a>
             </button>
           </div>
@@ -302,7 +302,7 @@ function App() {
               className="mt-6 px-4 py-2 bg-white border-red-600 border-2 rounded-xl text-red-600"
             >
               <a href="https://goo.gl/maps/NAMGszvCseSQZ3Qi7">
-                See on map
+                SEE ON MAP
               </a>
             </button>
           </div>
@@ -346,27 +346,6 @@ function App() {
           </div>
         </div> */}
       </div>
-      {/* <div className="bg-yellow-200 flex flex-col md:flex-row justify-evenly align-middle" id="Location" ref={locationRef}>
-        <div className="w-full md:w-1/4 md:my-10 shadow rounded border-4 border-red-600">
-          <Image src={parkImage} alt="Audrow and Michelley in the park" layout="responsive" width={parkImage.width} height={parkImage.height} />
-        </div>
-        <div className="md:w-1/4 flex flex-col mt-6 md:mt-0 md:justify-center">
-          <h2 className="text-xl text-center">Venue</h2>
-          <p className="text-center">
-            Phil Hardberger park is a 300+ acre nature park near us, it{'’'}s where we go for our weekly Sunday hike and where we got engaged! 
-            <br />
-            The ceremony will be held in the picnic areas by the Urban Ecology Center, designed by Lake Flato.
-          </p>
-        </div>
-        <div className="md:w-1/4 flex flex-col mt-6 md:mt-0 md:justify-center">
-          <h2 className="text-xl text-center">Hotel</h2>
-          <p className="text-center">
-          There are plenty of hotel options near the airport and downtown, feel free to choose whatever works for you. 
-          <br/>
-          We stayed at the Estancia del Norte when we first moved here, and had a great experience. It’s 7 mins from the airport, and about 8 mins from our house and Phil Hardberger park.
-          </p>
-      </div>
-        </div> */}
       <div className="bg-alice-blue" id="Schedule" ref={scheduleRef}>
         <div className="grid grid-cols-2 gap-10 text-center py-8 md:px-10">
           <div className="font-bold">
@@ -405,8 +384,8 @@ function App() {
         <div>
           <div className="text-center mx-8 md:mx-24 lg:mx-48 p-12">
             <div>
-              <object data="/svg/attire.svg" className="inline-flex justify-center"></object>
-              <div className="font-bold p-2">ATTIRE</div>
+              <object data="/svg/attire.svg" className="inline-flex justify-center -p-1"></object>
+              <div className="font-bold">ATTIRE</div>
               <div className="font-semibold">Semi-formal, no colors</div>
               <p>Following Chinese wedding traditions, Michelle and Audrow will be wearing red. During the ceremony please wear something in greyscale {"("}black, white, or grey{")"}. Semi-formal means suit jacket with optional tie, cocktail dress, jumpsuit, etc.
                 <br />
@@ -415,12 +394,18 @@ function App() {
             <div className="pt-10">
               <object data="/svg/weather.svg" className="inline-flex justify-center"></object>
               <div className="font-bold p-2">WEATHER</div>
-              <p>While we don{"'"}t have personal experience with Novembers in San Antonio, yet, historic weather data shows that the temperatures have a high of 74 degrees, and a low of 55 degrees, about 55% humidity, windspeed of 4mph - 14mph, and a 19% chance of percipitation.</p>
+              <p>While we don{"'"}t have personal experience with Novembers in San Antonio, yet, historic weather data shows that the temperatures in mid-November have a high of 74 degrees, low of 55 degrees, about 55% humidity, windspeed of 4mph - 14mph, and a 19% chance of percipitation.</p>
             </div>
             <div className="pt-10">
               <object data="/svg/registry.svg" className="inline-flex justify-center"></object>
               <div className="font-bold p-2">REGISTRY</div>
               <p>We are more than grateful for those we love travel to our wedding, celebrating the happy occasion with us! We have most things we need for our house, however we are getting a puppy soon (!!!), so if you really would like to get us something for the puppy, here are some suggestions. Or find a cute Christmas ornament you’d like us to have.</p>
+              <button
+              className="mt-6 px-4 py-2 bg-white border-red-600 border-2 rounded-xl text-red-600"
+            >
+              <a href="https://www.myregistry.com/giftlist/maudrow">
+                SEE OUR REGISTRY
+              </a> </button>
             </div>
           </div>
         </div>
