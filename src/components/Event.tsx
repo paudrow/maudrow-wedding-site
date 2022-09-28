@@ -2,16 +2,16 @@ import Calendar from "./Calendar"
 import type { CalendarOptions } from "datebook"
 
 const Event = ({title, calendarOptions, children}: {title: string, calendarOptions: CalendarOptions, children: JSX.Element | JSX.Element[] }) => (
-  <div className='h-full flex flex-col justify-between'>
+  <div className='h-full flex flex-col justify-between items-center'>
     <div>
-      <h1 className='text-xl uppercase'>
+      <h1 className='text-xl uppercase font-bold py-3'>
         {title}
       </h1>
-      <div>
+      <div className="max-w-sm px-6">
         {children}
       </div>
     </div>
-    <div>
+    <div className="py-3">
       <Calendar calendarOptions={calendarOptions} />
     </div>
   </div>

@@ -29,12 +29,12 @@ function Main() {
         <object data="/svg/lantern5.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
         <object data="/svg/lantern6.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
       </div>
-      <h1 className="text-center font-bangers text-3xl md:text-6xl font-bold text-big-red mt-5">We{"'"}re Getting Married!</h1>
-      <div className="w-full lg:w-2/3 sm:w-3/4 my-10 shadow rounded">
-        <Image priority src={mainImage} alt="Audrow and Michelley" layout="responsive" width={mainImage.width} height={mainImage.height} />
+      <h1 className="text-center font-bangers text-3xl md:text-6xl font-bold text-big-red mt-10">We{"'"}re Getting Married!</h1>
+      <div className="w-5/6 lg:w-2/3 my-10 drop-shadow-lg rounded-3xl border-4 md:border-6 border-big-red overflow-hidden">
+        <Image priority src={mainImage} alt="Audrow and Michelley" layout="responsive" width={mainImage.width} height={mainImage.height}/>
       </div>
       <button
-        className="inline-flex items-center text-3xl md:text-5xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl shadow border-4 border-harvest-gold py-4 px-4 sm:px-8 md:px-14 lg:px-18"
+        className="inline-flex animate-grow items-center text-2xl md:text-5xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl drop-shadow border-3 md:border-4 border-harvest-gold py-4 px-6 sm:px-6 md:px-14 lg:px-18"
         onClick={confettiFireworks}
       >
         11/11/22 &nbsp;in &nbsp;San Antonio, Tx</button>
@@ -45,10 +45,11 @@ function Main() {
   )
 
   const Location = () => (
-    <div className="bg-ltyellowbg" id="Location" ref={locationRef}>
-      <div className="grid grid-flow-row grid-cols-1 md:grid-cols-3 md:gap-6 md:mx-6">
-        <div className="hidden md:flex flex-col justify-center items-center">
-          <img src={parkImage.src} alt="Audrow and Michelley in the park" className='w-full max-w-sm border-4 border-red-600 rounded-3xl overflow-hidden' />
+    <div className="bg-ltyellowbg " id="Location" ref={locationRef}>
+      <div className='w-full flex flex-row justify-center'>
+      <div className="grid grid-flow-row grid-cols-1 md:grid-cols-3 md:gap-3 md:mx-6">
+        <div className="hidden md:flex flex-col justify-center items-center py-4 px-6">
+          <img src={parkImage.src} alt="Audrow and Michelley in the park" className='w-full max-w-sm border-4 border-fire-opal drop-shadow-md rounded-3xl overflow-hidden'/>
         </div>
         <Place title='Venue' svgPath="/svg/venue.svg" url="https://goo.gl/maps/xYZbHhp1sPpjzv8t6">
           <p>
@@ -56,7 +57,7 @@ function Main() {
           </p>
           <br />
           <p>
-            The ceremony will be held in the picnic areas by the Urban Ecology Center, designed by Lake Flato.
+            The ceremony will be held in the picnic area by the Urban Ecology Center, designed by Lake Flato.
           </p>
         </Place>
         <Place title='Hotel' svgPath="/svg/hotel.svg" url="https://goo.gl/maps/NAMGszvCseSQZ3Qi7">
@@ -69,72 +70,68 @@ function Main() {
           </p>
         </Place>
       </div>
+      </div>
     </div>
   )
 
   const Schedule = () => (
     <div className="bg-alice-blue py-10" id="Schedule" ref={scheduleRef}>
-      <div className='grid grid-flow-row grid-cols-1 md:grid-cols-2 text-center gap-y-6 md:gap-x-6 md:gap-y-10 md:px-10'>
+      <div className='w-full flex flex-row justify-center'>
+      <div className='grid grid-flow-row grid-cols-1 md:grid-cols-2 text-center gap-y-6 md:gap-x-10 md:gap-y-10 md:px-10'>
         <Event title='Thursday' calendarOptions={plans.thursday}>
           <div>
-            6:00 pm
-            <br />
+          <div className='font-semibold'>6:00 pm</div>
             Welcome dinner at our favourite Texas BBQ, The Smoke Shack
             <div className="text-big-red">3714 Broadway</div>
           </div>
         </Event>
         <Event title='Friday' calendarOptions={plans.friday}>
           <div>
-            4:00 pm
-            <br />
+          <div className='font-semibold'> 4:00 pm </div>
             Come to the park for photos & enjoy the views
           </div>
           <div>
-            4:30 pm
-            <br />
+          <div className='font-semibold pt-3'>4:30 pm</div>
             The wedding ceremony! & more photos during Golden Hour
           </div>
           <div>
-            6:00 pm
-            <br />
+          <div className='font-semibold pt-3'>6:00 pm</div>
             Hot pot dinner at Sichuan Garden
             <div className="text-big-red">2347 NW Military Hwy</div>
           </div>
         </Event>
         <Event title='Saturday' calendarOptions={plans.saturday}>
           <div>
-            10:30 am
-            <br />
+          <div className='font-semibold'>10:30 am</div>
             Brunch at the Pearl
             <div className="text-big-red">tbd</div>
           </div>
           <div>
-            12:00 pm
-            <br />
+          <div className='font-semibold pt-3'>12:00 pm</div>
             Farmers Market at the Pearl
           </div>
         </Event>
         <Event title='Sunday' calendarOptions={plans.sunday}>
           <div>
-            11:00 am
-            <br />
+          <div className='font-semibold'>11:00 am</div>
             Come over for lemony sourdough pancakes!
             <div className="text-big-red">11210 Cedar Elm</div>
           </div>
         </Event>
+      </div>
       </div>
     </div>
   )
 
   const Details = () => (
     <div className="bg-pink" id="Details" ref={detailsRef}>
-      <div>
-        <div className="text-center mx-8 md:mx-24 lg:mx-48 p-12">
+      <div className="flex justify-center py-10 md:py-16">
+        <div className="text-center w-3/4 lg:max-w-3xl">
           <div>
             <object data="/svg/attire.svg" className="inline-flex justify-center -p-1"></object>
             <div className="font-bold">ATTIRE</div>
             <div className="font-semibold">Semi-formal, no colors</div>
-            <p>Following Chinese wedding traditions, Michelle and Audrow will be wearing red. During the ceremony please wear something in greyscale {"("}black, white, or grey{")"}. Semi-formal means suit jacket with optional tie, cocktail dress, jumpsuit, etc.
+            <p>Following Chinese wedding traditions, Michelle and Audrow will be wearing red. During the ceremony please wear something in greyscale {"("}black, white, or grey{")"}. Semi-formal means suit jacket {"("}tie optional{")"}, cocktail dress, jumpsuit, etc.
               <br />
               For the rest of the events, please wear whatever you{"'"}re comfortable with.</p>
           </div>
@@ -148,7 +145,7 @@ function Main() {
             <div className="font-bold p-2">REGISTRY</div>
             <p>We are more than grateful for those we love travel to our wedding, celebrating the happy occasion with us! We have most things we need for our house, however we are getting a puppy soon (!!!), so if you really would like to get us something for the puppy, here are some suggestions. Or find a cute Christmas ornament you’d like us to have.</p>
             <button
-              className="mt-6 px-4 py-2 bg-white border-red-600 border-2 rounded-xl text-red-600"
+              className="mt-6 px-4 py-2 bg-white border-fire-opal border-2 rounded-xl text-fire-opal"
             >
               <a className="uppercase" href="https://www.myregistry.com/giftlist/maudrow">
                 Our registry
@@ -156,9 +153,11 @@ function Main() {
           </div>
         </div>
       </div>
-      <div className="text-center py-4">Feel free to text, call, email, discord us with any questions or concerns.</div>
+      <div className='flex flex-col items-center'>
+      <div className="py-4 px-6 max-w-sm md:max-w-full text-center">Feel free to text, call, email, discord us with any questions or concerns.</div>
       <div className="font-bangers text-big-red text-center pb-10 text-3xl md:text-5xl">
         We can{"'"}t wait to see you!
+        </div>
       </div>
     </div>
   )
@@ -183,7 +182,7 @@ function Main() {
       <Location />
       <Schedule />
       <Details />
-      <footer className='bg-slate-300 h-72 flex flex-col justify-center text-center'>
+      <footer className='bg-alice-blue h-20 flex items-center justify-center px-6'>
         This website was made with love by Michelley and Audrow
       </footer>
     </>

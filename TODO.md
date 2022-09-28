@@ -1,14 +1,14 @@
 # TODO
 
 - [x] Add RSVP button
-- [ ] Make cute favicon
-- [ ] Style the navbar (desktop)
-- [ ] Style the navbar (mobile)
-- [ ] Add icons to Calendar buttons
-- [ ] Style schedule section
-- [ ] Style main photo
-- [ ] Make width look better on ultra wide displays
-- [ ] Style footer
+- [x] Make cute favicon
+- [x] Style the navbar (desktop)
+- [x] Style the navbar (mobile)
+- [x] Add icons to Calendar buttons
+- [x] Style schedule section
+- [x] Style main photo
+- [x] Make width look better on ultra wide displays
+- [x] Style footer
 
 Bonus:
 - [ ] Add Carousel at top
