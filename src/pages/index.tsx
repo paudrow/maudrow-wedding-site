@@ -29,12 +29,12 @@ function Main() {
         <object data="/svg/lantern5.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
         <object data="/svg/lantern6.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
       </div>
-      <h1 className="text-center font-bangers text-3xl md:text-6xl font-bold text-big-red mt-5">We{"'"}re Getting Married!</h1>
-      <div className="w-4/5 lg:w-2/3 my-10 drop-shadow-lg rounded-3xl border-6 border-big-red overflow-hidden">
+      <h1 className="text-center font-bangers text-3xl md:text-6xl font-bold text-big-red mt-10">We{"'"}re Getting Married!</h1>
+      <div className="w-5/6 lg:w-2/3 my-10 drop-shadow-lg rounded-3xl border-4 md:border-6 border-big-red overflow-hidden">
         <Image priority src={mainImage} alt="Audrow and Michelley" layout="responsive" width={mainImage.width} height={mainImage.height}/>
       </div>
       <button
-        className="inline-flex animate-grow items-center text-3xl md:text-5xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl shadow border-4 border-harvest-gold py-4 px-4 sm:px-8 md:px-14 lg:px-18 drop-shadow-md"
+        className="inline-flex animate-grow items-center text-3xl md:text-5xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl drop-shadow border-3 md:border-4 border-harvest-gold py-4 px-3 sm:px-6 md:px-14 lg:px-18"
         onClick={confettiFireworks}
       >
         11/11/22 &nbsp;in &nbsp;San Antonio, Tx</button>
@@ -48,7 +48,7 @@ function Main() {
     <div className="bg-ltyellowbg " id="Location" ref={locationRef}>
       <div className='w-full flex flex-row justify-center'>
       <div className="grid grid-flow-row grid-cols-1 md:grid-cols-3 md:gap-3 md:mx-6">
-        <div className="hidden md:flex flex-col justify-center items-center py-16 px-6">
+        <div className="hidden md:flex flex-col justify-center items-center py-4 px-6">
           <img src={parkImage.src} alt="Audrow and Michelley in the park" className='w-full max-w-sm border-4 border-fire-opal drop-shadow-md rounded-3xl overflow-hidden'/>
         </div>
         <Place title='Venue' svgPath="/svg/venue.svg" url="https://goo.gl/maps/xYZbHhp1sPpjzv8t6">
@@ -131,7 +131,7 @@ function Main() {
             <object data="/svg/attire.svg" className="inline-flex justify-center -p-1"></object>
             <div className="font-bold">ATTIRE</div>
             <div className="font-semibold">Semi-formal, no colors</div>
-            <p>Following Chinese wedding traditions, Michelle and Audrow will be wearing red. During the ceremony please wear something in greyscale {"("}black, white, or grey{")"}. Semi-formal means suit jacket with optional tie, cocktail dress, jumpsuit, etc.
+            <p>Following Chinese wedding traditions, Michelle and Audrow will be wearing red. During the ceremony please wear something in greyscale {"("}black, white, or grey{")"}. Semi-formal means suit jacket {"("}tie optional{")"}, cocktail dress, jumpsuit, etc.
               <br />
               For the rest of the events, please wear whatever you{"'"}re comfortable with.</p>
           </div>

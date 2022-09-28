@@ -54,7 +54,7 @@ function Navbar({sections} : Props) {
   return (
     <>
       <nav className="sticky top-0 z-20" ref={navRef}>
-        <div className="bg-white h-16 flex flex-row items-center sm:justify-center">
+        <div className="bg-alice-blue h-16 flex flex-row items-center sm:justify-center">
           <div className="inline-flex justify-start pl-4 sm:hidden">
             <button
               className="inline-flex items-center justify-center rounded-md p-2 text-big-red hover:bg-pink hover:text-fire-opal focus:outline-none focus:ring-2 focus:ring-inset focus:ring-big-red"
@@ -75,7 +75,7 @@ function Navbar({sections} : Props) {
                 onClick={() => {
                   scrollTo(section.ref, navHeight);
                 }}
-                className={currentSection === section.id ? 'bg-red-500' : ''}
+                className={currentSection === section.id ? 'border-b-4 border-big-red text-big-red' : 'hover:text-fire-opal'}
               >
                 {section.name}
               </button>
@@ -92,7 +92,7 @@ function Navbar({sections} : Props) {
                     scrollTo(section.ref, navHeight);
                     setIsOpen(false);
                   }}
-                  className={currentSection === section.id ? 'bg-red-500' : ''}
+                  className={currentSection === section.id ? 'border-fire-opal border-x-6 bg-pink mx-16' : ''}
                 >
                   {section.name}
                 </button>

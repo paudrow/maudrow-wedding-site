@@ -58,7 +58,7 @@ const CountdownTimer = ({targetDate, showSeconds=true}: { targetDate: Date, show
 function TimeCard({value, units}: {value: number, units: string}) {
   return (
       <div className='flex flex-col gap-2 items-center'>
-        <div className='bg-alice-blue flex items-center justify-center border-big-red border-3 rounded-xl w-12 md:w-16 h-16 md:h-20 text-center text-2xl md:text-3xl text-big-red'>
+        <div className='bg-alice-blue flex items-center justify-center border-big-red border-2 md:border-3 rounded-xl w-12 md:w-16 h-16 md:h-20 text-center text-2xl md:text-3xl text-big-red'>
           {value}
         </div>
         <div className='text-big-red'>
