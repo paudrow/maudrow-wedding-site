@@ -30,7 +30,7 @@ function Main() {
         <object data="/svg/lantern6.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
       </div>
       <h1 className="text-center font-bangers text-3xl md:text-6xl font-bold text-big-red mt-10">We{"'"}re Getting Married!</h1>
-      <div className="w-5/6 lg:w-2/3 my-10 drop-shadow-lg rounded-3xl border-4 md:border-6 border-big-red overflow-hidden">
+      <div className="w-5/6 lg:w-2/3 max-w-6xl my-10 drop-shadow-lg rounded-3xl border-4 md:border-6 border-big-red overflow-hidden">
         <Image priority src={mainImage} alt="Audrow and Michelley" layout="responsive" width={mainImage.width} height={mainImage.height}/>
       </div>
       <button
