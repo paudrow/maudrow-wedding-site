@@ -21,7 +21,7 @@ function Main() {
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0)
-    }, 300);
+    }, 500);
   }, []);
 
   const Home = () => (
