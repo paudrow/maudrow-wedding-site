@@ -12,7 +12,7 @@ const Place = ({ children, url, title, svgPath }: { children: JSX.Element | JSX.
     <button
       className="uppercase self-center my-1 md:my-6 px-4 py-2 m-4 w-1/2 md:w-2/3 lg:w-48 bg-white border-fire-opal border-2 rounded-xl text-fire-opal"
     >
-      <a href={url}>
+      <a href={url} target="_blank" rel="noreferrer">
         See on map
       </a>
     </button>

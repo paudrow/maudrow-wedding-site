@@ -147,7 +147,7 @@ function Main() {
             <button
               className="mt-6 px-4 py-2 bg-white border-fire-opal border-2 rounded-xl text-fire-opal"
             >
-              <a className="uppercase" href="https://www.myregistry.com/giftlist/maudrow">
+              <a className="uppercase" href="https://www.myregistry.com/giftlist/maudrow" target="_blank" rel="noreferrer">
                 Our registry
               </a> </button>
           </div>
