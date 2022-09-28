@@ -26,7 +26,7 @@ function Navbar({sections} : Props) {
 
   const navRef = createRef<HTMLDivElement>();
   const [navHeight, setNavHeight] = useState(0);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState<string | undefined>();
 
   useEffect(() => {
@@ -53,7 +53,7 @@ function Navbar({sections} : Props) {
 
   return (
     <>
-      <nav className="sticky top-0" ref={navRef}>
+      <nav className="sticky top-0 z-20" ref={navRef}>
         <div className="bg-white h-16 flex flex-row items-center sm:justify-center">
           <div className="inline-flex justify-start pl-4 sm:hidden">
             <button
