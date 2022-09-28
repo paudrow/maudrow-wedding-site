@@ -3,11 +3,8 @@ import { ICalendar, CalendarOptions, GoogleCalendar, YahooCalendar, OutlookCalen
 export default function Calendar({ calendarOptions }: { calendarOptions: CalendarOptions }) {
   return (
     <>
-      <h1>
-        {calendarOptions.title}
-      </h1>
       <p>Add to calendar</p>
-      <div className="grid grid-flow-row">
+      <div className="flex flex-row justify-evenly">
         <button onClick={() => new ICalendar(calendarOptions).download()}>
           Apple
         </button>

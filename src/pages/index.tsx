@@ -3,10 +3,13 @@ import Navbar from '../components/Navbar';
 import Image from 'next/image';
 import confettiFireworks from '../utils/fireworks';
 import CountdownTimer from '../components/Countdown';
-import * as config from "../../config";
+import Place from '../components/Place';
+import Event from '../components/Event';
+import {weddingDate, plans} from "../../events";
 
 import mainImage from '../../public/imgs/main-image-engage.jpg'
 import parkImage from '../../public/imgs/park-engaged.jpg'
+
 
 function Main() {
 
@@ -36,100 +39,89 @@ function Main() {
       >
         11/11/22 &nbsp;in &nbsp;San Antonio, Tx</button>
       <div className="py-10">
-        <CountdownTimer targetDate={config.weddingDetails.ceremony.start} showSeconds={false} />
+        <CountdownTimer targetDate={weddingDate} showSeconds={false} />
       </div>
     </div>
   )
 
   const Location = () => (
     <div className="bg-ltyellowbg" id="Location" ref={locationRef}>
-      <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-3 sm:gap-6 sm:mx-6">
-        <div className="col-span-1 hidden sm:flex flex-col justify-center">
-          <div className="border-4 border-red-600 rounded-3xl overflow-hidden">
-            <Image src={parkImage} alt="Audrow and Michelley in the park" layout="responsive" width={parkImage.width} height={parkImage.height} />
-          </div>
+      <div className="grid grid-flow-row grid-cols-1 md:grid-cols-3 md:gap-6 md:mx-6">
+        <div className="hidden md:flex flex-col justify-center items-center">
+          <img src={parkImage.src} alt="Audrow and Michelley in the park" className='w-full max-w-sm border-4 border-red-600 rounded-3xl overflow-hidden' />
         </div>
-        <div className="col-span-1 text-center my-10 mx-4 md:mx-2 lg:mx-10">
-          <div className="flex justify-center">
-            <object data="/svg/venue.svg"></object>
-          </div>
-          <h2 className="text-xl font-bold">VENUE</h2>
-          <div>
-            <p>
-              Phil Hardberger park is a 300+ acre nature park near us, it{'’'}s where we go for our weekly Sunday hike and where we got engaged!
-            </p>
-            <br />
-            <p>
-              The ceremony will be held in the picnic areas by the Urban Ecology Center, designed by Lake Flato.
-            </p>
-          </div>
-          <button
-            className="mt-6 px-4 py-2 bg-white border-red-600 border-2 rounded-xl text-red-600"
-          >
-            <a href="https://goo.gl/maps/xYZbHhp1sPpjzv8t6">
-              See on map
-            </a>
-          </button>
-        </div>
-        <div className="col-span-1 text-center my-10 mx-4 md:mx-2 lg:mx-10">
-          <div className="flex justify-center">
-            <object data="/svg/hotel.svg"></object>
-          </div>
-          <h2 className="text-xl font-bold">HOTEL</h2>
-          <div>
-            <p>
-              There are plenty of hotel options near the airport and downtown, feel free to choose whatever works for you.
-            </p>
-            <br />
-            <p>
-              We stayed at the Estancia del Norte when we first moved here, and had a great experience. It’s 7 mins from the airport, and about 8 mins from our house and Phil Hardberger park.
-            </p>
-          </div>
-          <button
-            className="mt-6 px-4 py-2 bg-white border-red-600 border-2 rounded-xl text-red-600"
-          >
-            <a href="https://goo.gl/maps/NAMGszvCseSQZ3Qi7">
-              See on map
-            </a>
-          </button>
-        </div>
+        <Place title='Venue' svgPath="/svg/venue.svg" url="https://goo.gl/maps/xYZbHhp1sPpjzv8t6">
+          <p>
+            Phil Hardberger park is a 300+ acre nature park near us, it{'’'}s where we go for our weekly Sunday hike and where we got engaged!
+          </p>
+          <br />
+          <p>
+            The ceremony will be held in the picnic areas by the Urban Ecology Center, designed by Lake Flato.
+          </p>
+        </Place>
+        <Place title='Hotel' svgPath="/svg/hotel.svg" url="https://goo.gl/maps/NAMGszvCseSQZ3Qi7">
+          <p>
+            There are plenty of hotel options near the airport and downtown, feel free to choose whatever works for you.
+          </p>
+          <br />
+          <p>
+            We stayed at the Estancia del Norte when we first moved here, and had a great experience. It’s 7 mins from the airport, and about 8 mins from our house and Phil Hardberger park.
+          </p>
+        </Place>
       </div>
     </div>
   )
 
   const Schedule = () => (
-    <div className="bg-alice-blue" id="Schedule" ref={scheduleRef}>
-      <div className="grid grid-cols-2 gap-10 text-center py-8 md:px-10">
-        <div className="font-bold uppercase">
-          Thursday
-        </div>
-        <div className="font-bold">
-          Friday
-        </div>
-        <div> {/*thursday*/}
-          6:00 pm
-          <br />
-          Welcome dinner at our favourite Texas BBQ, The Smoke Shack
-          <div className="text-big-red">3714 Broadway</div>
-        </div>
-        <div> {/*friday*/}
-          4:00 pm
-          <br />
-          Come to the park for photos & enjoy the views
-        </div>
-        <div>{/*blank thursday*/}</div>
-        <div> {/*friday*/}
-          4:30 pm
-          <br />
-          The wedding ceremony! & more photos during Golden Hour
-        </div>
-        <div>{/*blank thursday*/}</div>
-        <div> {/*friday*/}
-          6:00 pm
-          <br />
-          Hot pot dinner at Sichuan Garden
-          <div className="text-big-red">2347 NW Military Hwy</div>
-        </div>
+    <div className="bg-alice-blue py-10" id="Schedule" ref={scheduleRef}>
+      <div className='grid grid-flow-row grid-cols-1 md:grid-cols-2 text-center gap-y-6 md:gap-x-6 md:gap-y-10 md:px-10'>
+        <Event title='Thursday' calendarOptions={plans.thursday}>
+          <div>
+            6:00 pm
+            <br />
+            Welcome dinner at our favourite Texas BBQ, The Smoke Shack
+            <div className="text-big-red">3714 Broadway</div>
+          </div>
+        </Event>
+        <Event title='Friday' calendarOptions={plans.friday}>
+          <div>
+            4:00 pm
+            <br />
+            Come to the park for photos & enjoy the views
+          </div>
+          <div>
+            4:30 pm
+            <br />
+            The wedding ceremony! & more photos during Golden Hour
+          </div>
+          <div>
+            6:00 pm
+            <br />
+            Hot pot dinner at Sichuan Garden
+            <div className="text-big-red">2347 NW Military Hwy</div>
+          </div>
+        </Event>
+        <Event title='Saturday' calendarOptions={plans.saturday}>
+          <div>
+            10:30 am
+            <br />
+            Brunch at the Pearl
+            <div className="text-big-red">tbd</div>
+          </div>
+          <div>
+            12:00 pm
+            <br />
+            Farmers Market at the Pearl
+          </div>
+        </Event>
+        <Event title='Sunday' calendarOptions={plans.sunday}>
+          <div>
+            11:00 am
+            <br />
+            Come over for lemony sourdough pancakes!
+            <div className="text-big-red">11210 Cedar Elm</div>
+          </div>
+        </Event>
       </div>
     </div>
   )
@@ -183,6 +175,9 @@ function Main() {
       <Location />
       <Schedule />
       <Details />
+      <footer className='bg-slate-300 h-72 flex flex-col justify-center text-center'>
+        This website was made with love by Michelley and Audrow
+      </footer>
     </>
   );
 }
