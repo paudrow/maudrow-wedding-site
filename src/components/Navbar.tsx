@@ -19,10 +19,11 @@ type Props = {
     ref: React.RefObject<HTMLDivElement>;
     name: string;
     id: string;
-  }[]
+  }[],
+  actionButton?: JSX.Element;
 }
 
-function Navbar({sections} : Props) {
+function Navbar({sections, actionButton} : Props) {
 
   const navRef = createRef<HTMLDivElement>();
   const [navHeight, setNavHeight] = useState(0);
@@ -55,7 +56,7 @@ function Navbar({sections} : Props) {
     <>
       <nav className="sticky top-0 z-20" ref={navRef}>
         <div className="bg-white h-16 flex flex-row items-center sm:justify-center">
-          <div className="inline-flex justify-start pl-4 sm:hidden">
+          <div className="flex flex-row justify-between w-full px-4 sm:hidden">
             <button
               className="inline-flex items-center justify-center rounded-md p-2 text-big-red hover:bg-pink hover:text-fire-opal focus:outline-none focus:ring-2 focus:ring-inset focus:ring-big-red"
               onClick={() => setIsOpen(!isOpen)}
@@ -67,6 +68,7 @@ function Navbar({sections} : Props) {
                 <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
               )}
             </button>
+            {actionButton}
           </div>
           <div className='hidden sm:flex flex-row justify-center gap-6'>
             {sections.map((section) => (
@@ -80,6 +82,7 @@ function Navbar({sections} : Props) {
                 {section.name}
               </button>
             ))}
+            {actionButton}
           </div>
         </div>
         {isOpen && (
