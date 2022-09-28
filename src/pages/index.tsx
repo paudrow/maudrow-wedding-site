@@ -63,7 +63,7 @@ function Main() {
           </p>
           <br />
           <p>
-            The ceremony will be held in the picnic area by the Urban Ecology Center, designed by Lake Flato.
+            The ceremony will be held in the picnic area by the Urban Ecology Center, designed by Lake Flato, a well-known local architecture firm.
           </p>
         </Place>
         <Place title='Hotel' svgPath="/svg/hotel.svg" url="https://goo.gl/maps/NAMGszvCseSQZ3Qi7">
