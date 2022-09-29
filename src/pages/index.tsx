@@ -9,7 +9,6 @@ import { weddingDate, plans } from "../../events";
 
 import mainImage from '../../public/imgs/main-image-engage.jpg'
 import parkImage from '../../public/imgs/park-engaged.jpg'
-import { RSC_MODULE_TYPES } from 'next/dist/shared/lib/constants';
 
 
 function Main() {
