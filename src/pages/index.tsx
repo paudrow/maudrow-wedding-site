@@ -1,4 +1,4 @@
-import { createRef } from 'react';
+import { createRef, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Image from 'next/image';
 import confettiFireworks from '../utils/fireworks';
@@ -18,6 +18,12 @@ function Main() {
   const locationRef = createRef<HTMLDivElement>();
   const scheduleRef = createRef<HTMLDivElement>();
   const detailsRef = createRef<HTMLDivElement>();
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0)
+    }, 500);
+  }, []);
 
   const Home = () => (
     <div className="bg-pink flex flex-col items-center" id="Home" ref={homeRef}>
@@ -58,7 +64,7 @@ function Main() {
             </p>
             <br />
             <p>
-              The ceremony will be held in the picnic area by the Urban Ecology Center, designed by Lake Flato.
+              The ceremony will be held in the picnic area by the Urban Ecology Center, designed by Lake Flato, a well-known local architecture firm.
             </p>
           </Place>
           <Place title='Hotel' svgPath="/svg/hotel.svg" url="https://goo.gl/maps/NAMGszvCseSQZ3Qi7">
@@ -97,8 +103,8 @@ function Main() {
             </div>
             <div>
               <div className='font-semibold pt-3'>6:00 pm</div>
-              Hot pot dinner at Sichuan Garden
-              <div className="text-big-red">2347 NW Military Hwy</div>
+              Post ceremony dinner
+              <div className="text-big-red">tbd</div>
             </div>
           </Event>
           <Event title='Saturday' calendarOptions={plans.saturday}>
