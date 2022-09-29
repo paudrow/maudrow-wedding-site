@@ -159,15 +159,26 @@ function Main() {
           </div>
         </div>
       </div>
-      <div className='flex flex-col items-center'>
-        <div className="py-4 px-6 max-w-sm md:max-w-full text-center">Feel free to text, call, email, discord us with any questions or concerns.</div>
-        <div className="font-bangers text-big-red text-center pb-10 text-3xl md:text-5xl">
-          We can{"'"}t wait to see you!
-        </div>
-      </div>
     </div>
   )
 
+  const RSVP = () => (
+    <div className='bg-ltyellowbg flex flex-col items-center py-8'>
+      <div className="font-bangers text-big-red text-center py-2 text-3xl md:text-5xl">
+        We can{"'"}t wait to see you!
+      </div>
+      <div className='p-4'>
+        <button className="bg-big-red rounded-xl text-white px-4 py-2 w-20 hover:bg-fire-opal">
+          <a className="uppercase" href="https://forms.gle/84zQh1WGK6mvrrzV9" target="_blank" rel="noreferrer">
+            RSVP
+          </a>
+        </button>
+      </div>
+      <div className='text-center p-2'>
+        Please RSVP by Tuesday October 11, 2022
+      </div>
+    </div>
+  )
   return (
     <>
       <Navbar sections={[
@@ -188,6 +199,7 @@ function Main() {
       <Location />
       <Schedule />
       <Details />
+      <RSVP />
       <footer className='bg-alice-blue h-20 flex items-center justify-center text-center px-6'>
         This website was made with love by Michelley and Audrow
       </footer>
