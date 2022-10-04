@@ -83,7 +83,7 @@ function Main() {
   const Schedule = () => (
     <div className="bg-alice-blue py-10" id="Schedule" ref={scheduleRef}>
       <div className='w-full flex flex-row justify-center'>
-        <div className='grid grid-flow-row grid-cols-1 md:grid-cols-2 text-center gap-y-6 md:gap-x-10 md:gap-y-10 md:px-10'>
+        <div className='grid grid-flow-row grid-cols-1 md:grid-cols-2 text-center gap-y-6 md:gap-x-10 md:gap-y-10'>
           <Event title='Thursday' calendarOptions={plans.thursday}>
             <div>
               <div className='font-semibold'>6:00 pm</div>
@@ -94,16 +94,16 @@ function Main() {
           <Event title='Friday' calendarOptions={plans.friday}>
             <div>
               <div className='font-semibold'> 4:00 pm </div>
-              Come to the park for photos & enjoy the views
+              Come to the park for First Look, <br/> photos & enjoy the views
             </div>
             <div>
               <div className='font-semibold pt-3'>4:30 pm</div>
-              The wedding ceremony! & more photos during Golden Hour
+              The wedding ceremony! <br /> & more photos during Golden Hour
             </div>
             <div>
-              <div className='font-semibold pt-3'>6:00 pm</div>
-              Post ceremony dinner
-              <div className="text-big-red">tbd</div>
+              <div className='font-semibold pt-3'>6:30 pm</div>
+              Post ceremony dinner at <br /> Best Quality Daughter
+              <div className="text-big-red">602 Avenue A</div>
             </div>
           </Event>
           <Event title='Saturday' calendarOptions={plans.saturday}>
