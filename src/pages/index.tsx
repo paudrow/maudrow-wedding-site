@@ -108,13 +108,9 @@ function Main() {
           </Event>
           <Event title='Saturday' calendarOptions={plans.saturday}>
             <div>
-              <div className='font-semibold'>10:30 am</div>
-              Brunch at the Pearl
-              <div className="text-big-red">tbd</div>
-            </div>
-            <div>
-              <div className='font-semibold pt-3'>12:00 pm</div>
-              Farmers Market at the Pearl
+              <div className='font-semibold'>10:00 am</div>
+              Brunch at Box St. All Day
+              <div className="text-big-red">623 Hemisfair Blvd</div>
             </div>
           </Event>
           <Event title='Sunday' calendarOptions={plans.sunday}>

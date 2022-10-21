@@ -27,12 +27,12 @@ const friday: CalendarOptions = {
 }
 
 const saturday: CalendarOptions = {
-  title: "Brunch + Farmers Market",
-  location: "303 Pearl Pkwy, San Antonio, TX 78215",
+  title: "Brunch",
+  location: "623 Hemisfair Blvd, San Antonio, TX 78205",
   description: endent`
-    We'll meet at the Pearl for brunch and then walk around the farmers market.
+    We'll meet for brunch and then walk around the area.
   `,
-  start: dayjs.tz('2022-11-12T10:30', 'America/Chicago').toDate(),
+  start: dayjs.tz('2022-11-12T10:00', 'America/Chicago').toDate(),
   end:   dayjs.tz('2022-11-12T14:00', 'America/Chicago').toDate(),
 }
 
