@@ -2,10 +2,9 @@ import { createRef, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Image from 'next/image';
 import confettiFireworks from '../utils/fireworks';
-import CountdownTimer from '../components/Countdown';
 import Place from '../components/Place';
 import Event from '../components/Event';
-import { weddingDate, plans } from "../../events";
+import { plans } from "../../events";
 
 import mainImage from '../../public/imgs/main-image-engage.jpg'
 import parkImage from '../../public/imgs/park-engaged.jpg'
@@ -189,13 +188,16 @@ function Main() {
       <div className="font-bangers text-big-red text-center py-2 text-3xl md:text-5xl">
         Thank you for coming!
       </div>
-      <div className='p-4'>
-        <button className="bg-big-red rounded-xl text-white px-4 py-2 hover:bg-fire-opal">
-          <a className="uppercase" href="https://freshcapsulephotography.pixieset.com/michelleandaudrowswedding/" target="_blank" rel="noreferrer">
-            See photos
-          </a>
-        </button>
-      </div>
+      <div className='py-2' />
+      <button className="bg-big-red rounded-xl text-white px-4 py-2 hover:bg-fire-opal">
+        <a className="uppercase" href="https://freshcapsulephotography.pixieset.com/michelleandaudrowswedding/" target="_blank" rel="noreferrer">
+          See photos
+        </a>
+      </button>
+      <div className='py-1' />
+      <p className='text-center italic'>
+        The download code is 1180
+      </p>
     </div>
   )
   return (
