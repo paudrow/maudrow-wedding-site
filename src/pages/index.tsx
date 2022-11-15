@@ -187,7 +187,7 @@ function Main() {
   const RSVP = () => (
     <div className='bg-ltyellowbg flex flex-col items-center py-8'>
       <div className="font-bangers text-big-red text-center py-2 text-3xl md:text-5xl">
-        We can{"'"}t wait to see you!
+        Thank you for coming!
       </div>
       <div className='p-4'>
         <button className="bg-big-red rounded-xl text-white px-4 py-2 hover:bg-fire-opal">
