@@ -196,9 +196,6 @@ function Main() {
           </a>
         </button>
       </div>
-      <div className='text-center p-2'>
-        Please RSVP by Tuesday October 11, 2022
-      </div>
     </div>
   )
   return (
