@@ -28,27 +28,53 @@ function Main() {
     <div className="bg-pink flex flex-col items-center" id="Home" ref={homeRef}>
       {/*lanterns*/}
       <div className="flex items-start lg:gap-20 gap-5 md:gap-10">
-        <object data="/svg/lantern1.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top hidden sm:block"></object>
-        <object data="/svg/lantern2.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
-        <object data="/svg/lantern3.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top" ></object>
-        <object data="/svg/lantern4.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
-        <object data="/svg/lantern5.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
-        <object data="/svg/lantern6.svg" className="h-20 flex-shrink md:h-full animate-swing origin-top"></object>
+        <object
+          data="/svg/lantern1.svg"
+          className="h-20 flex-shrink md:h-full animate-swing origin-top hidden sm:block"
+        ></object>
+        <object
+          data="/svg/lantern2.svg"
+          className="h-20 flex-shrink md:h-full animate-swing origin-top"
+        ></object>
+        <object
+          data="/svg/lantern3.svg"
+          className="h-20 flex-shrink md:h-full animate-swing origin-top"
+        ></object>
+        <object
+          data="/svg/lantern4.svg"
+          className="h-20 flex-shrink md:h-full animate-swing origin-top"
+        ></object>
+        <object
+          data="/svg/lantern5.svg"
+          className="h-20 flex-shrink md:h-full animate-swing origin-top"
+        ></object>
+        <object
+          data="/svg/lantern6.svg"
+          className="h-20 flex-shrink md:h-full animate-swing origin-top"
+        ></object>
       </div>
-      <h1 className="text-center font-bangers text-3xl md:text-6xl font-bold text-big-red mt-10">We{"'"}re Getting Married!</h1>
+      <h1 className="text-center font-bangers text-3xl md:text-6xl font-bold text-big-red mt-10">
+        We{"'"}re Getting Married!
+      </h1>
       <div className="w-5/6 lg:w-2/3 max-w-6xl my-10 drop-shadow-lg rounded-3xl border-4 md:border-6 border-big-red overflow-hidden">
-        <Image priority src={mainImage} alt="Audrow and Michelley" layout="responsive" width={mainImage.width} height={mainImage.height} />
+        <Image
+          priority
+          src={mainImage}
+          alt="Audrow and Michelley"
+          layout="responsive"
+          width={mainImage.width}
+          height={mainImage.height}
+        />
       </div>
       <button
         className="inline-flex animate-grow items-center text-2xl md:text-5xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl drop-shadow border-3 md:border-4 border-harvest-gold py-4 px-6 sm:px-6 md:px-14 lg:px-18"
         onClick={confettiFireworks}
       >
-        11/11/22 &nbsp;in &nbsp;San Antonio, Tx</button>
-      <div className="py-10">
-        <CountdownTimer targetDate={weddingDate} showSeconds={false} />
-      </div>
+        11/11/22 &nbsp;in &nbsp;San Antonio, Tx
+      </button>
+      <div className='py-10'/>
     </div>
-  )
+  );
 
   const Location = () => (
     <div className="bg-ltyellowbg " id="Location" ref={locationRef}>
@@ -117,7 +143,7 @@ function Main() {
             <div>
               <div className='font-semibold'>11:00 am</div>
               Come over for lemony sourdough pancakes!
-              <div className="text-big-red">11210 Cedar Elm</div>
+              <div className="text-big-red">Our Home</div>
             </div>
           </Event>
         </div>
@@ -164,9 +190,9 @@ function Main() {
         We can{"'"}t wait to see you!
       </div>
       <div className='p-4'>
-        <button className="bg-big-red rounded-xl text-white px-4 py-2 w-20 hover:bg-fire-opal">
-          <a className="uppercase" href="https://forms.gle/84zQh1WGK6mvrrzV9" target="_blank" rel="noreferrer">
-            RSVP
+        <button className="bg-big-red rounded-xl text-white px-4 py-2 hover:bg-fire-opal">
+          <a className="uppercase" href="https://freshcapsulephotography.pixieset.com/michelleandaudrowswedding/" target="_blank" rel="noreferrer">
+            See photos
           </a>
         </button>
       </div>
@@ -185,8 +211,8 @@ function Main() {
       ]}
         actionButton={(
           <button className="bg-big-red rounded-xl text-white px-4 py-2 hover:bg-fire-opal">
-            <a className="uppercase" href="https://forms.gle/84zQh1WGK6mvrrzV9" target="_blank" rel="noreferrer">
-              RSVP
+            <a className="uppercase" href="https://freshcapsulephotography.pixieset.com/michelleandaudrowswedding/" target="_blank" rel="noreferrer">
+              Photos
             </a>
           </button>
         )}

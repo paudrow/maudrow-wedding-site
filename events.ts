@@ -38,7 +38,7 @@ const saturday: CalendarOptions = {
 
 const sunday: CalendarOptions = {
   title: "Michelley Makes Pancakes!",
-  location: "11210 Cedar Elm Drive, San Antonio, TX 78230, USA",
+  location: "Our Home, San Antonio, TX 78230, USA",
   description: endent`
     For those still around, Michelley will be making pancakes!
   `,
