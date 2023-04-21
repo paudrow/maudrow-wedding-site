@@ -6,7 +6,7 @@ import Place from '../components/Place';
 import Event from '../components/Event';
 import { plans } from "../../events";
 
-import mainImage from '../../public/imgs/main-image-engage.jpg'
+import mainImage from '../../public/imgs/main-getting-married.jpg'
 import parkImage from '../../public/imgs/park-engaged.jpg'
 
 
@@ -52,8 +52,8 @@ function Main() {
           className="h-20 flex-shrink md:h-full animate-swing origin-top"
         ></object>
       </div>
-      <h1 className="text-center font-bangers text-3xl md:text-6xl font-bold text-big-red mt-10">
-        We{"'"}re Getting Married!
+      <h1 className="text-center font-bangers text-3xl md:text-6xl font-bold text-big-red mt-10 tracking-wider">
+        We got Married!
       </h1>
       <div className="w-5/6 lg:w-2/3 max-w-6xl my-10 drop-shadow-lg rounded-3xl border-4 md:border-6 border-big-red overflow-hidden">
         <Image
@@ -66,7 +66,7 @@ function Main() {
         />
       </div>
       <button
-        className="inline-flex animate-grow items-center text-2xl md:text-5xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl drop-shadow border-3 md:border-4 border-harvest-gold py-4 px-6 sm:px-6 md:px-14 lg:px-18"
+        className="inline-flex animate-grow items-center text-2xl md:text-5xl font-bangers text-big-red bg-sizzling-sunrise hover:bg-amber-400 rounded-xl drop-shadow border-3 md:border-4 border-harvest-gold py-4 px-6 sm:px-6 md:px-14 lg:px-18 tracking-wider"
         onClick={confettiFireworks}
       >
         11/11/22 &nbsp;in &nbsp;San Antonio, Tx
